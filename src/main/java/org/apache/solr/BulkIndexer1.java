@@ -28,11 +28,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
     public static void main(final String args[]) throws IOException, SolrServerException, Exception {
 
-        String zkHost = args[0]; // 0 - zk-string
+        final String zkHost = args[0]; // 0 - zk-string
         //final String zkHost = "localhost:9983";
-        final CloudSolrClient client = new CloudSolrClient(zkHost);
         final String collection = args[1]; // 1- collection-name
-        client.setDefaultCollection(collection);
 
         System.out.println("start :: " +System.currentTimeMillis());
 
@@ -89,6 +87,8 @@ import java.util.concurrent.ThreadLocalRandom;
             Thread t = new Thread() {
                 @Override
                 public void run() {
+                    CloudSolrClient client = new CloudSolrClient(zkHost);
+                    client.setDefaultCollection(collection);
                     List<SolrInputDocument> docs = new ArrayList<>();
                     for (int j = 0; j < 100; j++) {
                         for (int i = 0; i < 10000; i++) {
@@ -115,6 +115,7 @@ import java.util.concurrent.ThreadLocalRandom;
             threads.add(t);
             t.start();
         }
+        CloudSolrClient client = new CloudSolrClient(zkHost);
         updateRequest = new UpdateRequest();
         updateRequest.commit(client, collection);
         for (Thread thread: threads) thread.join();
