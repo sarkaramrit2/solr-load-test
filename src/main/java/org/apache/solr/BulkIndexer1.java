@@ -26,12 +26,12 @@ import java.util.concurrent.ThreadLocalRandom;
 
     private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    public static void main(String args[]) throws IOException, SolrServerException, Exception {
+    public static void main(final String args[]) throws IOException, SolrServerException, Exception {
 
-        String zkHost = "oregon-ms:9983";
+        String zkHost = args[0]; // 0 - zk-string
         //final String zkHost = "localhost:9983";
         final CloudSolrClient client = new CloudSolrClient(zkHost);
-        final String collection = "collection1";
+        final String collection = args[1]; // 1- collection-name
         client.setDefaultCollection(collection);
 
         System.out.println("start :: " +System.currentTimeMillis());
@@ -84,7 +84,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
         UpdateRequest updateRequest;
 
-        for (int k = 0; k < 2; k++) {
+        for (int k = 0; k < Integer.parseInt(args[2]); k++) { // 2- no of threads
             int index = ThreadLocalRandom.current().nextInt(5);
             Thread t = new Thread() {
                 @Override
@@ -94,11 +94,9 @@ import java.util.concurrent.ThreadLocalRandom;
                         for (int i = 0; i < 10000; i++) {
                             SolrInputDocument document = new SolrInputDocument();
                             document.addField("id", ThreadLocalRandom.current().nextLong());
-                            document.addField("cat1_s", createSentance(ThreadLocalRandom.current().nextInt(20)));
-                            document.addField("cat2_s", createSentance(ThreadLocalRandom.current().nextInt(20)));
-                            document.addField("cat3_s", createSentance(ThreadLocalRandom.current().nextInt(20)));
-                            document.addField("cat4_s", createSentance(ThreadLocalRandom.current().nextInt(20)));
-                            document.addField("cat5_s", createSentance(ThreadLocalRandom.current().nextInt(20)));
+                            for (int x = 0 ; x < Integer.parseInt(args[3]); x ++ ) {
+                                document.addField("cat"+x+"_s", createSentance(ThreadLocalRandom.current().nextInt(50)));
+                            }
                             //document.addField("add_s", inputs_all[ThreadLocalRandom.current().nextInt(20)]);
                             docs.add(document);
                         }

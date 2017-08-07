@@ -84,7 +84,7 @@ public class BulkIndexer2 {
 
         UpdateRequest updateRequest;
 
-        for (int k = 0; k < 2; k++) {
+        for (int k = 0; k < 100; k++) {
             int index = ThreadLocalRandom.current().nextInt(5);
             Thread t = new Thread() {
                 @Override
