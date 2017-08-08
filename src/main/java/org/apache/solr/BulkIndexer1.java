@@ -45,8 +45,8 @@ import java.util.concurrent.ThreadLocalRandom;
                 public void run() {
                     CloudSolrClient client = new CloudSolrClient(zkHost);
                     client.setDefaultCollection(collection);
-                    List<SolrInputDocument> docs = new ArrayList<>();
                     for (int j = 0; j < 100; j++) {
+                        List<SolrInputDocument> docs = new ArrayList<>();
                         for (int i = 0; i < 10000; i++) {
                             SolrInputDocument document = new SolrInputDocument();
                             document.addField("id", ThreadLocalRandom.current().nextLong());
