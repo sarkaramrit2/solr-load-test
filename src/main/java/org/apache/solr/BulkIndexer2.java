@@ -28,8 +28,8 @@ public class BulkIndexer2 {
 
     public static void main(String args[]) throws IOException, SolrServerException, Exception {
 
-        String zkHost = "oregon-ms:9983";
-        //final String zkHost = "localhost:9983";
+        //final String zkHost = "oregon-ms:9983";
+        final String zkHost = "localhost:9983";
         final CloudSolrClient client = new CloudSolrClient(zkHost);
         final String collection = "collection1";
         client.setDefaultCollection(collection);
@@ -90,8 +90,8 @@ public class BulkIndexer2 {
                 @Override
                 public void run() {
                     List<SolrInputDocument> docs = new ArrayList<>();
-                    for (int j = 0; j < 100; j++) {
-                        for (int i = 0; i < 10000; i++) {
+                    for (int j = 0; j < 1000; j++) {
+                        for (int i = 0; i < 1000; i++) {
                             SolrInputDocument document = new SolrInputDocument();
                             document.addField("id", ThreadLocalRandom.current().nextLong());
                             document.addField("cat1_s", createSentance(ThreadLocalRandom.current().nextInt(20)));
