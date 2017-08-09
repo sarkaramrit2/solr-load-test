@@ -45,12 +45,12 @@ import java.util.concurrent.ThreadLocalRandom;
                 public void run() {
                     CloudSolrClient client = new CloudSolrClient(zkHost);
                     client.setDefaultCollection(collection);
-                    for (int j = 0; j < 1000; j++) {
+                    for (int j = 0; j < Integer.parseInt(args[4]); j++) {
                         List<SolrInputDocument> docs = new ArrayList<>();
                         for (int i = 0; i < 10000; i++) {
                             SolrInputDocument document = new SolrInputDocument();
                             document.addField("id", ThreadLocalRandom.current().nextLong());
-                            String input = createSentance(ThreadLocalRandom.current().nextInt(20));
+                            String input = createSentance(20);
                             for (int x = 0 ; x < Integer.parseInt(args[3]); x ++ ) { // 3 - no of string fields / index=true / stored=true
                                 document.addField("cat"+x+"_s", input);
                             }
@@ -87,7 +87,7 @@ import java.util.concurrent.ThreadLocalRandom;
         //Sentence with numWords and 3-7 letters in each word
         StringBuilder sb = new StringBuilder(numWords * 5);
         for (int i = 0; i < numWords; i++) {
-            sb.append(TestUtil.randomSimpleString(r, 3, 7) + " ");
+            sb.append("abcd" + " ");
         }
         return sb.toString();
     }

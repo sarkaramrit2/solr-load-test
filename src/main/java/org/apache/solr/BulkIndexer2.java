@@ -36,69 +36,30 @@ public class BulkIndexer2 {
 
         System.out.println("start :: " +System.currentTimeMillis());
 
-        final String[] inputs_cat = new String[20];
-        inputs_cat[0] = "A";
-        inputs_cat[1] = "B";
-        inputs_cat[2] = "C";
-        inputs_cat[3] = "D";
-        inputs_cat[4] = "E";
-        inputs_cat[5] = "F";
-        inputs_cat[6] = "G";
-        inputs_cat[7] = "H";
-        inputs_cat[8] = "I";
-        inputs_cat[9] = "J";
-        inputs_cat[10] = "K";
-        inputs_cat[11] = "L";
-        inputs_cat[12] = "M";
-        inputs_cat[13] = "N";
-        inputs_cat[14] = "O";
-        inputs_cat[15] = "P";
-        inputs_cat[16] = "Q";
-        inputs_cat[17] = "R";
-        inputs_cat[18] = "S";
-        inputs_cat[19] = "T";
-
-        final String[] inputs_all = new String[20];
-        inputs_all[0] = "A-X";
-        inputs_all[1] = "B-X";
-        inputs_all[2] = "C-X";
-        inputs_all[3] = "D-X";
-        inputs_all[4] = "E-X";
-        inputs_all[5] = "F-X";
-        inputs_all[6] = "G-X";
-        inputs_all[7] = "H-X";
-        inputs_all[8] = "I-X";
-        inputs_all[9] = "J-X";
-        inputs_all[10] = "K-X";
-        inputs_all[11] = "L-X";
-        inputs_all[12] = "M-X";
-        inputs_all[13] = "N-X";
-        inputs_all[14] = "O-X";
-        inputs_all[15] = "P-X";
-        inputs_all[16] = "Q-X";
-        inputs_all[17] = "R-X";
-        inputs_all[18] = "S-X";
-        inputs_all[19] = "T-X";
-
         List<Thread> threads = new ArrayList<>(100);
 
-        UpdateRequest updateRequest;
+        final UpdateRequest updateRequest = new UpdateRequest();
 
-        for (int k = 0; k < 100; k++) {
+        for (int k = 0; k < 1; k++) {
             int index = ThreadLocalRandom.current().nextInt(5);
             Thread t = new Thread() {
                 @Override
                 public void run() {
-                    List<SolrInputDocument> docs = new ArrayList<>();
-                    for (int j = 0; j < 1000; j++) {
-                        for (int i = 0; i < 1000; i++) {
+                    for (int j = 0; j < 50000; j++) {
+                        List<SolrInputDocument> docs = new ArrayList<>();
+                        for (int i = 0; i < 1; i++) {
                             SolrInputDocument document = new SolrInputDocument();
                             document.addField("id", ThreadLocalRandom.current().nextLong());
-                            document.addField("cat1_s", createSentance(ThreadLocalRandom.current().nextInt(20)));
-                            document.addField("cat2_s", createSentance(ThreadLocalRandom.current().nextInt(20)));
-                            document.addField("cat3_s", createSentance(ThreadLocalRandom.current().nextInt(20)));
-                            document.addField("cat4_s", createSentance(ThreadLocalRandom.current().nextInt(20)));
-                            document.addField("cat5_s", createSentance(ThreadLocalRandom.current().nextInt(20)));
+                            document.addField("cat1_s", createSentance(20));
+                            document.addField("cat2_s", createSentance(20));
+                            document.addField("cat3_s", createSentance(20));
+                            document.addField("cat4_s", createSentance(20));
+                            document.addField("cat5_s", createSentance(20));
+                            document.addField("cat1_str", createSentance(20));
+                            document.addField("cat2_str", createSentance(20));
+                            document.addField("cat3_str", createSentance(20));
+                            document.addField("cat4_str", createSentance(20));
+                            document.addField("cat5_str", createSentance(20));
                             //document.addField("add_s", inputs_all[ThreadLocalRandom.current().nextInt(20)]);
                             docs.add(document);
                         }
@@ -111,14 +72,18 @@ public class BulkIndexer2 {
                         } catch (Exception e) {
 
                         }
+                        docs.clear();
+                    }
+                    try{
+                        updateRequest.commit(client, collection);
+                    } catch (Exception e) {
+
                     }
                 }
             };
             threads.add(t);
             t.start();
         }
-        updateRequest = new UpdateRequest();
-        updateRequest.commit(client, collection);
         for (Thread thread: threads) thread.join();
         System.out.println("end :: " +System.currentTimeMillis());
         System.exit(0);
@@ -133,7 +98,7 @@ public class BulkIndexer2 {
         //Sentence with numWords and 3-7 letters in each word
         StringBuilder sb = new StringBuilder(numWords * 5);
         for (int i = 0; i < numWords; i++) {
-            sb.append(TestUtil.randomSimpleString(r, 3, 7) + " ");
+            sb.append("abcd" + " ");
         }
         return sb.toString();
     }

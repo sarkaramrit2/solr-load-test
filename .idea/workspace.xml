@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a83e0936-c639-4b09-b1b9-98f31ca6a922" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java" />
     </list>
     <ignored path="solr-load-test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,12 +28,11 @@
       <file leaf-file-name="BulkIndexer1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-336">
-              <caret line="47" column="44" lean-forward="false" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+            <state relative-caret-position="144">
+              <caret line="86" column="61" lean-forward="true" selection-start-line="86" selection-start-column="61" selection-end-line="86" selection-end-column="61" />
               <folding>
-                <element signature="e#1535#3382#0" expanded="true" />
-                <element signature="e#3381#3382#0" expanded="true" />
-                <element signature="method#createSentance#0;class#BulkIndexer1#0" expanded="false" />
+                <element signature="e#1535#3366#0" expanded="true" />
+                <element signature="e#3365#3366#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,8 +41,8 @@
       <file leaf-file-name="BulkIndexer2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-831">
-              <caret line="31" column="41" lean-forward="false" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+            <state relative-caret-position="-870">
+              <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -1041,20 +1041,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-831">
-          <caret line="31" column="41" lean-forward="false" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
+        <state relative-caret-position="-870">
+          <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-336">
-          <caret line="47" column="44" lean-forward="false" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+        <state relative-caret-position="144">
+          <caret line="86" column="61" lean-forward="true" selection-start-line="86" selection-start-column="61" selection-end-line="86" selection-end-column="61" />
           <folding>
-            <element signature="e#1535#3382#0" expanded="true" />
-            <element signature="e#3381#3382#0" expanded="true" />
-            <element signature="method#createSentance#0;class#BulkIndexer1#0" expanded="false" />
+            <element signature="e#1535#3366#0" expanded="true" />
+            <element signature="e#3365#3366#0" expanded="true" />
           </folding>
         </state>
       </provider>
