@@ -65,7 +65,7 @@ import java.util.concurrent.ThreadLocalRandom;
                         updateRequest.add(docs);
                         try {
                             client.request(updateRequest, collection);
-                            //updateRequest.commit(client, collection);
+                            updateRequest.commit(client, collection);
                         } catch (Exception e) {
 
                         }
