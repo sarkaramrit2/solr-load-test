@@ -65,7 +65,7 @@ import java.util.concurrent.ThreadLocalRandom;
                         updateRequest.add(docs);
                         try {
                             client.request(updateRequest, collection);
-                            updateRequest.commit(client, collection);
+                            //updateRequest.commit(client, collection);
                         } catch (Exception e) {
 
                         }
@@ -76,9 +76,9 @@ import java.util.concurrent.ThreadLocalRandom;
             t.start();
         }
         CloudSolrClient client = new CloudSolrClient(zkHost);
+        for (Thread thread: threads) thread.join();
         updateRequest = new UpdateRequest();
         updateRequest.commit(client, collection);
-        for (Thread thread: threads) thread.join();
         System.out.println("end :: " +System.currentTimeMillis());
         System.exit(0);
     }

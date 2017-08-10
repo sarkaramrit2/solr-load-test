@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a83e0936-c639-4b09-b1b9-98f31ca6a922" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer1$1.class" afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer1.class" afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer2$1.class" afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer2$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer2.class" afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java" />
     </list>
     <ignored path="solr-load-test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +27,11 @@
       <file leaf-file-name="BulkIndexer1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-21">
-              <caret line="68" column="47" lean-forward="true" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
+            <state relative-caret-position="284">
+              <caret line="80" column="49" lean-forward="false" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
               <folding>
-                <element signature="e#1535#3364#0" expanded="true" />
-                <element signature="e#3363#3364#0" expanded="true" />
+                <element signature="e#1535#3366#0" expanded="true" />
+                <element signature="e#3365#3366#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,8 +40,8 @@
       <file leaf-file-name="BulkIndexer2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1046,19 +1040,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="120">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
-          <caret line="68" column="47" lean-forward="true" selection-start-line="68" selection-start-column="47" selection-end-line="68" selection-end-column="47" />
+        <state relative-caret-position="284">
+          <caret line="80" column="49" lean-forward="false" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
           <folding>
-            <element signature="e#1535#3364#0" expanded="true" />
-            <element signature="e#3363#3364#0" expanded="true" />
+            <element signature="e#1535#3366#0" expanded="true" />
+            <element signature="e#3365#3366#0" expanded="true" />
           </folding>
         </state>
       </provider>
