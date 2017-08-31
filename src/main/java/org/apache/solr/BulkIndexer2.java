@@ -45,9 +45,9 @@ public class BulkIndexer2 {
             Thread t = new Thread() {
                 @Override
                 public void run() {
-                    for (int j = 0; j < 50000; j++) {
+                    for (int j = 0; j < 1000000; j++) {
                         List<SolrInputDocument> docs = new ArrayList<>();
-                        for (int i = 0; i < 2; i++) {
+                        for (int i = 0; i < 100; i++) {
                             SolrInputDocument document = new SolrInputDocument();
                             document.addField("id", ThreadLocalRandom.current().nextLong());
                             document.addField("cat1_s", createSentance(20));
@@ -55,11 +55,11 @@ public class BulkIndexer2 {
                             document.addField("cat3_s", createSentance(20));
                             document.addField("cat4_s", createSentance(20));
                             document.addField("cat5_s", createSentance(20));
-                            document.addField("cat1_str", createSentance(20));
-                            document.addField("cat2_str", createSentance(20));
-                            document.addField("cat3_str", createSentance(20));
-                            document.addField("cat4_str", createSentance(20));
-                            document.addField("cat5_str", createSentance(20));
+                            //document.addField("cat1_str", createSentance(20));
+                            //document.addField("cat2_str", createSentance(20));
+                            //document.addField("cat3_str", createSentance(20));
+                            //document.addField("cat4_str", createSentance(20));
+                            //document.addField("cat5_str", createSentance(20));
                             //document.addField("add_s", inputs_all[ThreadLocalRandom.current().nextInt(20)]);
                             docs.add(document);
                         }
@@ -68,23 +68,23 @@ public class BulkIndexer2 {
                         updateRequest.add(docs);
                         try {
                             client.request(updateRequest, collection);
-                            //updateRequest.commit(client, collection);
                         } catch (Exception e) {
 
                         }
                         docs.clear();
                     }
-                    try{
+                    /*try{
                         updateRequest.commit(client, collection);
                     } catch (Exception e) {
 
-                    }
+                    }*/
                 }
             };
             threads.add(t);
             t.start();
         }
         for (Thread thread: threads) thread.join();
+        updateRequest.commit(client, collection);
         System.out.println("end :: " +System.currentTimeMillis());
         System.exit(0);
         /*while (true) {

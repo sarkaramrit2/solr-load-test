@@ -32,7 +32,7 @@ import java.util.concurrent.ThreadLocalRandom;
         //final String zkHost = "localhost:9983";
         final String collection = args[1]; // 1- collection-name
 
-        System.out.println("start :: " +System.currentTimeMillis());
+        log.info("start :: " +System.currentTimeMillis());
 
         List<Thread> threads = new ArrayList<>(100);
 
@@ -79,7 +79,7 @@ import java.util.concurrent.ThreadLocalRandom;
         for (Thread thread: threads) thread.join();
         updateRequest = new UpdateRequest();
         updateRequest.commit(client, collection);
-        System.out.println("end :: " +System.currentTimeMillis());
+        log.info("end :: " +System.currentTimeMillis());
         System.exit(0);
     }
 
