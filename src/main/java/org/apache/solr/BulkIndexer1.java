@@ -69,6 +69,16 @@ import java.util.concurrent.ThreadLocalRandom;
                         } catch (Exception e) {
 
                         }
+                        docs.clear();
+
+                        if (j%10 == 4) {
+                            try{
+                                UpdateRequest updateRequest2 = new UpdateRequest();
+                                updateRequest2.commit(client, collection);
+                            } catch (Exception e) {
+
+                            }
+                        }
                     }
                 }
             };
