@@ -45,9 +45,9 @@ public class BulkIndexer2 {
             Thread t = new Thread() {
                 @Override
                 public void run() {
-                    for (int j = 0; j < 1000000; j++) {
+                    for (int j = 0; j < 1000; j++) {
                         List<SolrInputDocument> docs = new ArrayList<>();
-                        for (int i = 0; i < 100; i++) {
+                        for (int i = 0; i < 1000; i++) {
                             SolrInputDocument document = new SolrInputDocument();
                             document.addField("id", ThreadLocalRandom.current().nextLong());
                             document.addField("cat1_s", createSentance(20));
@@ -84,7 +84,7 @@ public class BulkIndexer2 {
             t.start();
         }
         for (Thread thread: threads) thread.join();
-        updateRequest.commit(client, collection);
+        //updateRequest.commit(client, collection);
         System.out.println("end :: " +System.currentTimeMillis());
         System.exit(0);
         /*while (true) {

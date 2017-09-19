@@ -47,7 +47,7 @@ import java.util.concurrent.ThreadLocalRandom;
                     client.setDefaultCollection(collection);
                     for (int j = 0; j < Integer.parseInt(args[4]); j++) {
                         List<SolrInputDocument> docs = new ArrayList<>();
-                        for (int i = 0; i < 10000; i++) {
+                        for (int i = 0; i < 1000; i++) {
                             SolrInputDocument document = new SolrInputDocument();
                             document.addField("id", ThreadLocalRandom.current().nextLong());
                             String input = createSentance(20);
