@@ -40,21 +40,21 @@ public class BulkIndexer2 {
 
         final UpdateRequest updateRequest = new UpdateRequest();
 
-        for (int k = 0; k < 2; k++) {
+        for (int k = 0; k < 5; k++) {
             int index = ThreadLocalRandom.current().nextInt(5);
             Thread t = new Thread() {
                 @Override
                 public void run() {
-                    for (int j = 0; j < 1000; j++) {
+                    for (int j = 0; j < 2000; j++) {
                         List<SolrInputDocument> docs = new ArrayList<>();
                         for (int i = 0; i < 1000; i++) {
                             SolrInputDocument document = new SolrInputDocument();
-                            document.addField("id", ThreadLocalRandom.current().nextLong());
+                            document.addField("id", UUID.randomUUID().toString());
                             document.addField("cat1_s", createSentance(20));
                             document.addField("cat2_s", createSentance(20));
                             document.addField("cat3_s", createSentance(20));
-                            document.addField("cat4_s", createSentance(20));
-                            document.addField("cat5_s", createSentance(20));
+                            //document.addField("cat4_s", createSentance(20));
+                            //document.addField("cat5_s", createSentance(20));
                             //document.addField("cat1_str", createSentance(20));
                             //document.addField("cat2_str", createSentance(20));
                             //document.addField("cat3_str", createSentance(20));

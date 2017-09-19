@@ -49,7 +49,7 @@ import java.util.concurrent.ThreadLocalRandom;
                         List<SolrInputDocument> docs = new ArrayList<>();
                         for (int i = 0; i < 1000; i++) {
                             SolrInputDocument document = new SolrInputDocument();
-                            document.addField("id", ThreadLocalRandom.current().nextLong());
+                            document.addField("id", UUID.randomUUID().toString());
                             String input = createSentance(20);
                             for (int x = 0 ; x < Integer.parseInt(args[3]); x ++ ) { // 3 - no of string fields / index=true / stored=true
                                 document.addField("cat"+x+"_s", input);
