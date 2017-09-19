@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a83e0936-c639-4b09-b1b9-98f31ca6a922" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solr-load-test.iml" afterPath="$PROJECT_DIR$/solr-load-test.iml" />
     </list>
     <ignored path="solr-load-test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-234">
-              <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="25" />
+              <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -47,8 +48,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="41" column="31" lean-forward="false" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+            <state relative-caret-position="182">
+              <caret line="40" column="31" lean-forward="true" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -1126,7 +1127,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-234">
-          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="25" />
+          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1141,8 +1142,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="41" column="31" lean-forward="false" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+        <state relative-caret-position="182">
+          <caret line="40" column="31" lean-forward="true" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
           <folding />
         </state>
       </provider>
