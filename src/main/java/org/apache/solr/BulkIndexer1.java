@@ -33,6 +33,7 @@ import java.util.concurrent.ThreadLocalRandom;
         final String collection = args[1]; // 1- collection-name
 
         log.info("start :: " +System.currentTimeMillis());
+        System.out.println("start :: " +System.currentTimeMillis());
 
         List<Thread> threads = new ArrayList<>(100);
 
@@ -90,6 +91,7 @@ import java.util.concurrent.ThreadLocalRandom;
         updateRequest = new UpdateRequest();
         updateRequest.commit(client, collection);
         log.info("end :: " +System.currentTimeMillis());
+        System.out.println("end :: " +System.currentTimeMillis());
         System.exit(0);
     }
 
