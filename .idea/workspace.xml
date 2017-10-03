@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a83e0936-c639-4b09-b1b9-98f31ca6a922" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solr-load-test.iml" afterPath="$PROJECT_DIR$/solr-load-test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java" />
     </list>
     <ignored path="solr-load-test.iws" />
@@ -70,10 +69,10 @@
       <file leaf-file-name="QuerySolr_2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2325">
-              <caret line="173" column="68" lean-forward="true" selection-start-line="173" selection-start-column="68" selection-end-line="173" selection-end-column="68" />
+            <state relative-caret-position="255">
+              <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
               <folding>
-                <element signature="e#6498#6507#0" expanded="true" />
+                <element signature="e#6495#6504#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1303,10 +1302,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2325">
-          <caret line="173" column="68" lean-forward="true" selection-start-line="173" selection-start-column="68" selection-end-line="173" selection-end-column="68" />
+        <state relative-caret-position="255">
+          <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
           <folding>
-            <element signature="e#6498#6507#0" expanded="true" />
+            <element signature="e#6495#6504#0" expanded="true" />
           </folding>
         </state>
       </provider>
