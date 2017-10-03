@@ -155,7 +155,7 @@ public class QuerySolr_2 {
 
                         try {
                             QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
-                                    add("json.facet", json_q1)
+                                    add("json.facet", json_q2)
                             );
                             avg.set(0,avg.get(0) + response.getQTime());
                         } catch (Exception e) {
