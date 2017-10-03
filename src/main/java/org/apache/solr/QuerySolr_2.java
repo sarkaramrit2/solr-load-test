@@ -30,7 +30,7 @@ public class QuerySolr_2 {
 
         //String zkHost = "virginia:9983";
         final String zkHost = "34.210.73.96:9983";
-        final String collection = args[1];
+        final String collection = args[0];
         HttpClient httpClient;
         ModifiableSolrParams params = new ModifiableSolrParams();
         params.set(HttpClientUtil.PROP_MAX_CONNECTIONS, 2048);
