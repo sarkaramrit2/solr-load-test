@@ -1,9 +1,12 @@
 package org.apache.solr;
 
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.lucene.util.TestUtil;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.CloudSolrClient;
+import org.apache.solr.client.solrj.impl.HttpClientUtil;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.params.ModifiableSolrParams;
 import org.slf4j.Logger;
@@ -28,46 +31,97 @@ public class QuerySolr_2 {
         //String zkHost = "virginia:9983";
         final String zkHost = "34.210.73.96:9983";
         final String collection = "vehicles";
-        final CloudSolrClient client = new CloudSolrClient(zkHost);
+        HttpClient httpClient;
+        ModifiableSolrParams params = new ModifiableSolrParams();
+        params.set(HttpClientUtil.PROP_MAX_CONNECTIONS, 2048);
+        params.set(HttpClientUtil.PROP_MAX_CONNECTIONS_PER_HOST, 1024);
+        params.set(HttpClientUtil.PROP_FOLLOW_REDIRECTS, false);
+        httpClient = HttpClientUtil.createClient(params);
+        final CloudSolrClient client = new CloudSolrClient(zkHost, httpClient);
+        System.out.println(client.getHttpClient().getParams());
         client.setDefaultCollection(collection);
 
+        final String json = "{\n" +
+                "\tmodels: {\n" +
+                "\t\ttype: terms,\n" +
+                "\t\tfield: \"v_model_s\",\n" +
+                "\t\tfacet: {\n" +
+                "\t\t\tyear_per_model: {\n" +
+                "\t\t\t\ttype: terms,\n" +
+                "\t\t\t\tfield: \"v_year_i\",\n" +
+                "\t\t\t\tlimit: 10,\n" +
+                "\t\t\t\tfacet: {\n" +
+                "\t\t\t\t\tclaim_month: {\n" +
+                "\t\t\t\t\t\tdomain: {\n" +
+                "\t\t\t\t\t\t\tjoin: {\n" +
+                "\t\t\t\t\t\t\t\tfrom: \"vin_s\",\n" +
+                "\t\t\t\t\t\t\t\tto: \"vin_s\"\n" +
+                "\t\t\t\t\t\t\t},\n" +
+                "\t\t\t\t\t\t\tfilter: \"doc_type_s:claim\"\n" +
+                "\t\t\t\t\t\t},\n" +
+                "\t\t\t\t\t\ttype: terms,\n" +
+                "\t\t\t\t\t\tfield: \"claim_opcode_s\",\n" +
+                "\t\t\t\t\t\tlimit: 1\n" +
+                "\t\t\t\t\t}\n" +
+                "\t\t\t\t}\n" +
+                "\t\t\t}\n" +
+                "\t\t}\n" +
+                "\t}\n" +
+                "}";
+
         final String json_query =
-                "{" +
-                        "models: {" +
-                        "type: terms," +
-                        "field: \"v_model_s\"," +
-                        "facet: {" +
-                        "year_per_model: {" +
-                        "type: terms," +
-                        "field: \"v_year_i\"," +
-                        "limit: 10," +
-                        "facet: {" +
-                        "claim_month: {" +
-                        "domain: {" +
-                        "join: {" +
-                        "from: \"vin_s\"," +
-                        "to: \"vin_s\"" +
-                        "}," +
-                        "filter: \"doc_type_s:claim\"" +
-                        "}," +
-                        "type: terms," +
-                        "field: \"claim_opcode_s\"," +
-                        "limit: 1" +
-                        "}" +
-                        "}" +
-                        "}" +
-                        "}" +
-                        "}" +
+                "{\n" +
+                        "    models: {\n" +
+                        "        type: terms,\n" +
+                        "        field: \"v_model_s\",\n" +
+                        "        limit: 10,\n" +
+                        "                refine: true,\n" +
+                        "        facet: {\n" +
+                        "            year_per_model: {\n" +
+                        "                type: terms,\n" +
+                        "                field: \"v_year_i\",\n" +
+                        "                limit: 10,\n" +
+                        "                facet: {\n" +
+                        "                    claim_month: {\n" +
+                        "                        domain: {\n" +
+                        "                            join: {\n" +
+                        "                                from: \"vin_s\",\n" +
+                        "                                to: \"vin_s\"\n" +
+                        "                            },\n" +
+                        "                            filter: \"doc_type_s:claim\"\n" +
+                        "                        },\n" +
+                        "                        type: terms,\n" +
+                        "                        field: \"claim_opcode_s\",\n" +
+                        "                        limit: 10,\n" +
+                        "                                                facet: {\n" +
+                        "                                    defect_shop: {\n" +
+                        "                                        domain: {\n" +
+                        "                                            join: {\n" +
+                        "                                                from: \"vin_s\",\n" +
+                        "                                                to: \"vin_s\"\n" +
+                        "                                            },\n" +
+                        "                                            filter: \"doc_type_s:defect\"\n" +
+                        "                                        },\n" +
+                        "                                        type: terms,\n" +
+                        "                                        field: \"defect_shop_s\",\n" +
+                        "                                        limit: 10\n" +
+                        "                                    }\n" +
+                        "                                }\n" +
+                        "                    }\n" +
+                        "                }\n" +
+                        "            }\n" +
+                        "        }\n" +
+                        "    }\n" +
                         "}";
 
-        List<Thread> threads = new ArrayList<>(1000000);
+        List<Thread> threads = new ArrayList<>(50);
 
 
         int i=Integer.parseInt(args[0]);
 
-        while(true) {
+        //while() {
 
-            int j=++i*100;
+            int j=i;
             System.out.println("simultaneous theads: " + j);
             long start = System.currentTimeMillis();
 
@@ -79,9 +133,9 @@ public class QuerySolr_2 {
 
                         try {
                             QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
-                                    add("json.facet", json_query).
-                                    add("indent", "true")
+                                    add("json.facet", json_query)
                             );
+                            System.out.println("qtime: " + response.getQTime());
                         } catch (Exception e) {
                             System.err.println(e);
                         }
@@ -92,25 +146,10 @@ public class QuerySolr_2 {
                 t.start();
             }
             for (Thread thread : threads) thread.join();
+            //Thread.sleep(60000);
             long end = System.currentTimeMillis();
             System.out.println("time spent: "+ (end-start));
-        }
+        //}
 
-    }
-
-    private static String createSentance(int numWords) {
-        //Sentence with numWords and 3-7 letters in each word
-        StringBuilder sb = new StringBuilder(numWords * 5);
-        for (int i = 0; i < numWords; i++) {
-            sb.append(TestUtil.randomSimpleString(r, 3, 7) + " ");
-        }
-        return sb.toString();
-    }
-
-    public ModifiableSolrParams queryDefaults() {
-        if (queryDefaults == null) {
-            queryDefaults = new ModifiableSolrParams();
-        }
-        return queryDefaults;
     }
 }
