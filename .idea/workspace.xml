@@ -69,8 +69,8 @@
       <file leaf-file-name="QuerySolr_2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+            <state relative-caret-position="-638">
+              <caret line="149" column="33" lean-forward="false" selection-start-line="149" selection-start-column="33" selection-end-line="149" selection-end-column="33" />
               <folding>
                 <element signature="e#6497#6506#0" expanded="true" />
               </folding>
@@ -1302,8 +1302,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+        <state relative-caret-position="-638">
+          <caret line="149" column="33" lean-forward="false" selection-start-line="149" selection-start-column="33" selection-end-line="149" selection-end-column="33" />
           <folding>
             <element signature="e#6497#6506#0" expanded="true" />
           </folding>

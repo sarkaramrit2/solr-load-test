@@ -147,7 +147,7 @@ public class QuerySolr_2 {
             //System.out.println("simultaneous theads: " + j);
             long start = System.currentTimeMillis();
 
-            for (int k = 0; k < 2; k++) {
+            for (int k = 0; k < 4; k++) {
 
                 Thread t = new Thread() {
                     @Override
@@ -167,7 +167,7 @@ public class QuerySolr_2 {
                 threads.add(t);
                 t.start();
             }
-        for (int k = 0; k < 2; k++) {
+        for (int k = 0; k < 4; k++) {
 
             Thread t = new Thread() {
                 @Override
@@ -187,7 +187,7 @@ public class QuerySolr_2 {
             threads.add(t);
             t.start();
         }
-        for (int k = 0; k < 12; k++) {
+        for (int k = 0; k < 27; k++) {
 
             Thread t = new Thread() {
                 @Override
