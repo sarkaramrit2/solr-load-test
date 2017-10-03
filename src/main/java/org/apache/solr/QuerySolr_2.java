@@ -69,6 +69,7 @@ public class QuerySolr_2 {
 
             int j=++i*100;
             System.out.println("simultaneous theads: " + j);
+            long start = System.currentTimeMillis();
 
             for (int k = 0; k < (int)j; k++) {
 
@@ -91,6 +92,8 @@ public class QuerySolr_2 {
                 t.start();
             }
             for (Thread thread : threads) thread.join();
+            long end = System.currentTimeMillis();
+            System.out.println("time spent: "+ (end-start));
         }
 
     }
