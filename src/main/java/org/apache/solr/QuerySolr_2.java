@@ -136,18 +136,18 @@ public class QuerySolr_2 {
         List<Thread> threads = new ArrayList<>(50);
 
 
-        int i=Integer.parseInt(args[0]);
+        //int i=Integer.parseInt(args[0]);
 
         final List<Integer> avg = new ArrayList<Integer>();
         avg.add(0);
 
         //while() {
 
-            int j=i;
-            System.out.println("simultaneous theads: " + j);
+            //int j=i;
+            //System.out.println("simultaneous theads: " + j);
             long start = System.currentTimeMillis();
 
-            for (int k = 0; k < (int)j; k++) {
+            for (int k = 0; k < 2; k++) {
 
                 Thread t = new Thread() {
                     @Override
@@ -167,11 +167,51 @@ public class QuerySolr_2 {
                 threads.add(t);
                 t.start();
             }
+        for (int k = 0; k < 2; k++) {
+
+            Thread t = new Thread() {
+                @Override
+                public void run() {
+
+                    try {
+                        QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
+                                add("json.facet", json_q2)
+                        );
+                        avg.set(0,avg.get(0) + response.getQTime());
+                    } catch (Exception e) {
+                        System.err.println(e);
+                    }
+
+                }
+            };
+            threads.add(t);
+            t.start();
+        }
+        for (int k = 0; k < 12; k++) {
+
+            Thread t = new Thread() {
+                @Override
+                public void run() {
+
+                    try {
+                        QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
+                                add("json.facet", json_q3)
+                        );
+                        avg.set(0,avg.get(0) + response.getQTime());
+                    } catch (Exception e) {
+                        System.err.println(e);
+                    }
+
+                }
+            };
+            threads.add(t);
+            t.start();
+        }
             for (Thread thread : threads) thread.join();
             //Thread.sleep(60000);
             long end = System.currentTimeMillis();
             System.out.println("time spent: "+ (end-start));
-            System.out.println("avg qtime: "+ (double)avg.get(0)/j);
+            System.out.println("avg qtime: "+ (double)avg.get(0)/16);
         //}
 
     }
