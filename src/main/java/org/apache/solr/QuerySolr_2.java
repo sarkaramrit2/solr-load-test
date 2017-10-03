@@ -41,41 +41,57 @@ public class QuerySolr_2 {
         System.out.println(client.getHttpClient().getParams());
         client.setDefaultCollection(collection);
 
-        final String json = "{\n" +
-                "\tmodels: {\n" +
-                "\t\ttype: terms,\n" +
-                "\t\tfield: \"v_model_s\",\n" +
-                "\t\tfacet: {\n" +
-                "\t\t\tyear_per_model: {\n" +
-                "\t\t\t\ttype: terms,\n" +
-                "\t\t\t\tfield: \"v_year_i\",\n" +
-                "\t\t\t\tlimit: 10,\n" +
-                "\t\t\t\tfacet: {\n" +
-                "\t\t\t\t\tclaim_month: {\n" +
-                "\t\t\t\t\t\tdomain: {\n" +
-                "\t\t\t\t\t\t\tjoin: {\n" +
-                "\t\t\t\t\t\t\t\tfrom: \"vin_s\",\n" +
-                "\t\t\t\t\t\t\t\tto: \"vin_s\"\n" +
-                "\t\t\t\t\t\t\t},\n" +
-                "\t\t\t\t\t\t\tfilter: \"doc_type_s:claim\"\n" +
-                "\t\t\t\t\t\t},\n" +
-                "\t\t\t\t\t\ttype: terms,\n" +
-                "\t\t\t\t\t\tfield: \"claim_opcode_s\",\n" +
-                "\t\t\t\t\t\tlimit: 1\n" +
-                "\t\t\t\t\t}\n" +
-                "\t\t\t\t}\n" +
-                "\t\t\t}\n" +
-                "\t\t}\n" +
-                "\t}\n" +
-                "}";
+        final String json_q1 = "{\n" +
+                "    models: {\n" +
+                "        type: terms,\n" +
+                "        field: \"v_model_s\",\n" +
+                "        limit: 10,\n" +
+                "\t\t\t\trefine: true,\n" +
+                "        facet: {\n" +
+                "            year_per_model: {\n" +
+                "                type: terms,\n" +
+                "                field: \"v_year_i\",\n" +
+                "                limit: 10,\n" +
+                "                facet: {\n" +
+                "                    claim_month: {\n" +
+                "                        domain: {\n" +
+                "                            join: {\n" +
+                "                                from: \"vin_s\",\n" +
+                "                                to: \"vin_s\"\n" +
+                "                            },\n" +
+                "                            filter: \"doc_type_s:claim\"\n" +
+                "                        },\n" +
+                "                        type: terms,\n" +
+                "                        field: \"claim_opcode_s\",\n" +
+                "                        limit: 10,\n" +
+                "\t\t\t\t\t\t\t\t\t\t\t\tfacet: {\n" +
+                "\t\t\t\t                    defect_shop: {\n" +
+                "\t\t\t\t                        domain: {\n" +
+                "\t\t\t\t                            join: {\n" +
+                "\t\t\t\t                                from: \"vin_s\",\n" +
+                "\t\t\t\t                                to: \"vin_s\"\n" +
+                "\t\t\t\t                            },\n" +
+                "\t\t\t\t                            filter: \"doc_type_s:defect\"\n" +
+                "\t\t\t\t                        },\n" +
+                "\t\t\t\t                        type: terms,\n" +
+                "\t\t\t\t                        field: \"defect_shop_s\",\n" +
+                "\t\t\t\t                        limit: 10\n" +
+                "\t\t\t\t                    }\n" +
+                "\t\t\t\t                }\n" +
+                "                    }\n" +
+                "                }\n" +
+                "            }\n" +
+                "        }\n" +
+                "    }\n" +
+                "}\n";
 
-        final String json_query =
+        final String json_q2 =
                 "{\n" +
                         "    models: {\n" +
                         "        type: terms,\n" +
                         "        field: \"v_model_s\",\n" +
                         "        limit: 10,\n" +
-                        "                refine: true,\n" +
+                        "\t\t\t\trefine: true,\n" +
                         "        facet: {\n" +
                         "            year_per_model: {\n" +
                         "                type: terms,\n" +
@@ -92,32 +108,38 @@ public class QuerySolr_2 {
                         "                        },\n" +
                         "                        type: terms,\n" +
                         "                        field: \"claim_opcode_s\",\n" +
-                        "                        limit: 10,\n" +
-                        "                                                facet: {\n" +
-                        "                                    defect_shop: {\n" +
-                        "                                        domain: {\n" +
-                        "                                            join: {\n" +
-                        "                                                from: \"vin_s\",\n" +
-                        "                                                to: \"vin_s\"\n" +
-                        "                                            },\n" +
-                        "                                            filter: \"doc_type_s:defect\"\n" +
-                        "                                        },\n" +
-                        "                                        type: terms,\n" +
-                        "                                        field: \"defect_shop_s\",\n" +
-                        "                                        limit: 10\n" +
-                        "                                    }\n" +
-                        "                                }\n" +
+                        "                        limit: 10\n" +
                         "                    }\n" +
                         "                }\n" +
                         "            }\n" +
                         "        }\n" +
                         "    }\n" +
-                        "}";
+                        "}\n";
+
+        final String json_q3 = "{\n" +
+                "    defects: {\n" +
+                "        type: terms,\n" +
+                "        field: \"defect_shop_s\",\n" +
+                "        limit: 10,\n" +
+                "\t\t\t\trefine: true,\n" +
+                "\t\t\t\tdomain: {\n" +
+                "\t\t\t\t\t\tjoin: {\n" +
+                "\t\t\t\t\t\t\t\tfrom: \"vin_s\",\n" +
+                "\t\t\t\t\t\t\t\tto: \"vin_s\"\n" +
+                "\t\t\t\t\t\t},\n" +
+                "\t\t\t\t\t\tfilter: \"doc_type_s:defect\"\n" +
+                "\t\t\t\t}\n" +
+                "    }\n" +
+                "}\n" +
+                "\n";
 
         List<Thread> threads = new ArrayList<>(50);
 
 
         int i=Integer.parseInt(args[0]);
+
+        final List<Integer> avg = new ArrayList<Integer>();
+        avg.add(0);
 
         //while() {
 
@@ -133,9 +155,9 @@ public class QuerySolr_2 {
 
                         try {
                             QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
-                                    add("json.facet", json_query)
+                                    add("json.facet", json_q1)
                             );
-                            System.out.println("qtime: " + response.getQTime());
+                            avg.set(0,avg.get(0) + response.getQTime());
                         } catch (Exception e) {
                             System.err.println(e);
                         }
@@ -149,6 +171,7 @@ public class QuerySolr_2 {
             //Thread.sleep(60000);
             long end = System.currentTimeMillis();
             System.out.println("time spent: "+ (end-start));
+            System.out.println("avg qtime: "+ (double)avg.get(0)/j);
         //}
 
     }
