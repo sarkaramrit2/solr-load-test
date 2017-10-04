@@ -152,7 +152,6 @@ public class QuerySolr_2 {
                             QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle AND v_year_i:2007").
                                     add("json.facet", json_q3)
                             );
-                            System.out.println("qtime: " + response.getQTime());
                             avg.set(0, avg.get(0) + response.getQTime());
                         } catch (Exception e) {
                             System.err.println(e);
