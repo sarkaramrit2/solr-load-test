@@ -137,7 +137,7 @@ public class QuerySolr_2 {
         final List<Integer> avg = new ArrayList<Integer>();
         avg.add(0);
 
-        System.out.println("simultaneous theads: " + j_1 + " : " + "j_2" + " : " + j_3);
+        System.out.println("simultaneous theads: " + j_1 + " : " + j_2 + " : " + j_3);
         long start = System.currentTimeMillis();
 
         if (args[1].equals("3") || args[1].equals("10")) {
