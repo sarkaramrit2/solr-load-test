@@ -211,7 +211,7 @@ public class QuerySolr_2 {
             //Thread.sleep(60000);
             long end = System.currentTimeMillis();
             System.out.println("time spent: "+ (end-start));
-            System.out.println("avg qtime: "+ (double)avg.get(0)/16);
+            System.out.println("avg qtime: "+ (double)avg.get(0)/35);
         //}
 
     }
