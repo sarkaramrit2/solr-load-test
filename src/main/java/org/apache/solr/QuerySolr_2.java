@@ -28,7 +28,6 @@ public class QuerySolr_2 {
 
     public static void main(String args[]) throws IOException, SolrServerException, Exception {
 
-        //String zkHost = "virginia:9983";
         final String zkHost = "34.210.73.96:9983";
         final String collection = args[1];
         HttpClient httpClient;
@@ -135,29 +134,28 @@ public class QuerySolr_2 {
         List<Thread> threads = new ArrayList<>(50);
 
 
-        int i=Integer.parseInt(args[0]);
+        int j = Integer.parseInt(args[0]);
 
         final List<Integer> avg = new ArrayList<Integer>();
         avg.add(0);
 
-        //while() {
+        System.out.println("simultaneous theads: " + j);
+        long start = System.currentTimeMillis();
 
-            int j=i;
-            System.out.println("simultaneous theads: " + j);
-            long start = System.currentTimeMillis();
+        if (args[2].equals("3")) {
 
-            for (int k = 0; k < (int)j; k++) {
+            for (int k = 0; k < (int) j; k++) {
 
                 Thread t = new Thread() {
                     @Override
                     public void run() {
 
                         try {
-                            QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
+                            QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle AND v_year_i:2007").
                                     add("json.facet", json_q3)
                             );
                             System.out.println("qtime: " + response.getQTime());
-                            avg.set(0,avg.get(0) + response.getQTime());
+                            avg.set(0, avg.get(0) + response.getQTime());
                         } catch (Exception e) {
                             System.err.println(e);
                         }
@@ -168,56 +166,57 @@ public class QuerySolr_2 {
                 t.start();
             }
 
+        } else if (args[2].equals("2")) {
 
+            for (int k = 0; k < 4; k++) {
 
+                Thread t = new Thread() {
+                    @Override
+                    public void run() {
 
+                        try {
+                            QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
+                                    add("json.facet", json_q2)
+                            );
+                            avg.set(0, avg.get(0) + response.getQTime());
+                        } catch (Exception e) {
+                            System.err.println(e);
+                        }
 
-        /*for (int k = 0; k < 4; k++) {
-
-            Thread t = new Thread() {
-                @Override
-                public void run() {
-
-                    try {
-                        QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
-                                add("json.facet", json_q2)
-                        );
-                        avg.set(0,avg.get(0) + response.getQTime());
-                    } catch (Exception e) {
-                        System.err.println(e);
                     }
-
-                }
-            };
-            threads.add(t);
-            t.start();
-        }*/
-        /*for (int k = 0; k < 27; k++) {
-
-            Thread t = new Thread() {
-                @Override
-                public void run() {
-
-                    try {
-                        QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
-                                add("json.facet", json_q3)
-                        );
-                        avg.set(0,avg.get(0) + response.getQTime());
-                    } catch (Exception e) {
-                        System.err.println(e);
-                    }
-
-                }
+                };
+                threads.add(t);
+                t.start();
             }
-            threads.add(t);
-            t.start();
-        } */
-            for (Thread thread : threads) thread.join();
-            //Thread.sleep(60000);
-            long end = System.currentTimeMillis();
-            System.out.println("time spent: "+ (end-start));
-            System.out.println("avg qtime: "+ (double)avg.get(0)/j);
-        //}
+
+        } else if (args[2].equals("1")) {
+
+
+            for (int k = 0; k < 27; k++) {
+
+                Thread t = new Thread() {
+                    @Override
+                    public void run() {
+
+                        try {
+                            QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
+                                    add("json.facet", json_q1)
+                            );
+                            avg.set(0, avg.get(0) + response.getQTime());
+                        } catch (Exception e) {
+                            System.err.println(e);
+                        }
+
+                    }
+                };
+                threads.add(t);
+                t.start();
+            }
+        }
+        for (Thread thread : threads) thread.join();
+        long end = System.currentTimeMillis();
+        System.out.println("time spent: " + (end - start));
+        System.out.println("avg qtime: " + (double) avg.get(0) / j);
 
     }
 }
