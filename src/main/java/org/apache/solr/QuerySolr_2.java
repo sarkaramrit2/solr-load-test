@@ -30,7 +30,7 @@ public class QuerySolr_2 {
 
         //String zkHost = "virginia:9983";
         final String zkHost = "34.210.73.96:9983";
-        final String collection = args[0];
+        final String collection = args[1];
         HttpClient httpClient;
         ModifiableSolrParams params = new ModifiableSolrParams();
         params.set(HttpClientUtil.PROP_MAX_CONNECTIONS, 2048);
@@ -136,18 +136,18 @@ public class QuerySolr_2 {
         List<Thread> threads = new ArrayList<>(50);
 
 
-        //int i=Integer.parseInt(args[0]);
+        int i=Integer.parseInt(args[0]);
 
         final List<Integer> avg = new ArrayList<Integer>();
         avg.add(0);
 
         //while() {
 
-            //int j=i;
-            //System.out.println("simultaneous theads: " + j);
+            int j=i;
+            System.out.println("simultaneous theads: " + j);
             long start = System.currentTimeMillis();
 
-            for (int k = 0; k < 4; k++) {
+            for (int k = 0; k < (int)j; k++) {
 
                 Thread t = new Thread() {
                     @Override
@@ -167,7 +167,7 @@ public class QuerySolr_2 {
                 threads.add(t);
                 t.start();
             }
-        for (int k = 0; k < 4; k++) {
+        /*for (int k = 0; k < 4; k++) {
 
             Thread t = new Thread() {
                 @Override
@@ -186,8 +186,8 @@ public class QuerySolr_2 {
             };
             threads.add(t);
             t.start();
-        }
-        for (int k = 0; k < 27; k++) {
+        }*/
+        /*for (int k = 0; k < 27; k++) {
 
             Thread t = new Thread() {
                 @Override
@@ -203,10 +203,10 @@ public class QuerySolr_2 {
                     }
 
                 }
-            };
+            }
             threads.add(t);
             t.start();
-        }
+        } */
             for (Thread thread : threads) thread.join();
             //Thread.sleep(60000);
             long end = System.currentTimeMillis();
