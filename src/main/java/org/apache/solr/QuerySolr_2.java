@@ -155,7 +155,7 @@ public class QuerySolr_2 {
 
                         try {
                             QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
-                                    add("json.facet", json_q1)
+                                    add("json.facet", json_q3)
                             );
                             avg.set(0,avg.get(0) + response.getQTime());
                         } catch (Exception e) {
@@ -211,7 +211,7 @@ public class QuerySolr_2 {
             //Thread.sleep(60000);
             long end = System.currentTimeMillis();
             System.out.println("time spent: "+ (end-start));
-            System.out.println("avg qtime: "+ (double)avg.get(0)/35);
+            System.out.println("avg qtime: "+ (double)avg.get(0)/j);
         //}
 
     }
