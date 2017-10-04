@@ -20,16 +20,12 @@ import java.util.Random;
 
 public class QuerySolr_2 {
 
-    ModifiableSolrParams queryDefaults = null;
-
-    private static Random r = new Random();
-
     private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     public static void main(String args[]) throws IOException, SolrServerException, Exception {
 
         final String zkHost = "34.210.73.96:9983";
-        final String collection = args[1];
+        final String collection = args[0];
         HttpClient httpClient;
         ModifiableSolrParams params = new ModifiableSolrParams();
         params.set(HttpClientUtil.PROP_MAX_CONNECTIONS, 2048);
@@ -134,17 +130,19 @@ public class QuerySolr_2 {
         List<Thread> threads = new ArrayList<>(50);
 
 
-        int j = Integer.parseInt(args[0]);
+        int j_1 = Integer.parseInt(args[2]);
+        int j_2 = Integer.parseInt(args[3]);
+        int j_3 = Integer.parseInt(args[4]);
 
         final List<Integer> avg = new ArrayList<Integer>();
         avg.add(0);
 
-        System.out.println("simultaneous theads: " + j);
+        System.out.println("simultaneous theads: " + j_1 + " : " + "j_2" + " : " + j_3);
         long start = System.currentTimeMillis();
 
-        if (args[2].equals("3")) {
+        if (args[1].equals("3") || args[1].equals("10")) {
 
-            for (int k = 0; k < (int) j; k++) {
+            for (int k = 0; k < (int) j_3; k++) {
 
                 Thread t = new Thread() {
                     @Override
@@ -166,9 +164,9 @@ public class QuerySolr_2 {
                 t.start();
             }
 
-        } else if (args[2].equals("2")) {
+        } else if (args[1].equals("2") || args[1].equals("10")) {
 
-            for (int k = 0; k < 4; k++) {
+            for (int k = 0; k < j_2; k++) {
 
                 Thread t = new Thread() {
                     @Override
@@ -189,10 +187,9 @@ public class QuerySolr_2 {
                 t.start();
             }
 
-        } else if (args[2].equals("1")) {
+        } else if (args[1].equals("1") || args[1].equals("10")) {
 
-
-            for (int k = 0; k < 27; k++) {
+            for (int k = 0; k < j_1; k++) {
 
                 Thread t = new Thread() {
                     @Override
@@ -213,10 +210,13 @@ public class QuerySolr_2 {
                 t.start();
             }
         }
+
         for (Thread thread : threads) thread.join();
+
         long end = System.currentTimeMillis();
+
         System.out.println("time spent: " + (end - start));
-        System.out.println("avg qtime: " + (double) avg.get(0) / j);
+        System.out.println("avg qtime: " + (double) avg.get(0) / (j_1 + j_2 + j_3));
 
     }
 }
