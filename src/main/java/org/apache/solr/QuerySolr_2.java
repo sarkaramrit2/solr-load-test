@@ -163,7 +163,9 @@ public class QuerySolr_2 {
                 t.start();
             }
 
-        } else if (args[1].equals("2") || args[1].equals("10")) {
+        }
+
+        if (args[1].equals("2") || args[1].equals("10")) {
 
             for (int k = 0; k < j_2; k++) {
 
@@ -186,7 +188,9 @@ public class QuerySolr_2 {
                 t.start();
             }
 
-        } else if (args[1].equals("1") || args[1].equals("10")) {
+        }
+
+        if (args[1].equals("1") || args[1].equals("10")) {
 
             for (int k = 0; k < j_1; k++) {
 
