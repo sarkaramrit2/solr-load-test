@@ -130,8 +130,7 @@ public class QuerySolr_2 {
                 "\t\t\t\t\t\tfilter: \"doc_type_s:defect\"\n" +
                 "\t\t\t\t}\n" +
                 "    }\n" +
-                "}\n" +
-                "\n";
+                "}\n";
 
         List<Thread> threads = new ArrayList<>(50);
 
@@ -157,6 +156,7 @@ public class QuerySolr_2 {
                             QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
                                     add("json.facet", json_q3)
                             );
+                            System.out.println("qtime: " + response.getQTime());
                             avg.set(0,avg.get(0) + response.getQTime());
                         } catch (Exception e) {
                             System.err.println(e);
@@ -167,6 +167,11 @@ public class QuerySolr_2 {
                 threads.add(t);
                 t.start();
             }
+
+
+
+
+
         /*for (int k = 0; k < 4; k++) {
 
             Thread t = new Thread() {

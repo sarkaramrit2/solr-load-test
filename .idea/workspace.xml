@@ -69,12 +69,12 @@
       <file leaf-file-name="QuerySolr_2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2880">
-              <caret line="213" column="68" lean-forward="true" selection-start-line="213" selection-start-column="68" selection-end-line="213" selection-end-column="68" />
+            <state relative-caret-position="267">
+              <caret line="158" column="78" lean-forward="false" selection-start-line="158" selection-start-column="78" selection-end-line="158" selection-end-column="78" />
               <folding>
-                <element signature="e#6495#6504#0" expanded="true" />
-                <marker date="1507093522000" expanded="false" signature="7473:7549" ph="run() → {" />
-                <marker date="1507093522000" expanded="false" signature="7979:7998" ph="}" />
+                <element signature="e#6472#6481#0" expanded="true" />
+                <marker date="1507095092000" expanded="false" signature="7536:7612" ph="run() → {" />
+                <marker date="1507095092000" expanded="false" signature="8042:8061" ph="}" />
               </folding>
             </state>
           </provider>
@@ -1304,12 +1304,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2880">
-          <caret line="213" column="68" lean-forward="true" selection-start-line="213" selection-start-column="68" selection-end-line="213" selection-end-column="68" />
+        <state relative-caret-position="267">
+          <caret line="158" column="78" lean-forward="false" selection-start-line="158" selection-start-column="78" selection-end-line="158" selection-end-column="78" />
           <folding>
-            <element signature="e#6495#6504#0" expanded="true" />
-            <marker date="1507093522000" expanded="false" signature="7473:7549" ph="run() → {" />
-            <marker date="1507093522000" expanded="false" signature="7979:7998" ph="}" />
+            <element signature="e#6472#6481#0" expanded="true" />
+            <marker date="1507095092000" expanded="false" signature="7536:7612" ph="run() → {" />
+            <marker date="1507095092000" expanded="false" signature="8042:8061" ph="}" />
           </folding>
         </state>
       </provider>
