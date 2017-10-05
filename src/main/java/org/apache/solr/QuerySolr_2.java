@@ -52,8 +52,7 @@ public class QuerySolr_2 {
                 "                        domain: {\n" +
                 "                            join: {\n" +
                 "                                from: \"vin_s\",\n" +
-                "                                to: \"vin_s\",\n" +
-                "                                method: \"dv\",\n" +
+                "                                to: \"vin_s\"\n" +
                 "                            },\n" +
                 "                            filter: \"doc_type_s:claim\"\n" +
                 "                        },\n" +
@@ -99,8 +98,7 @@ public class QuerySolr_2 {
                         "                        domain: {\n" +
                         "                            join: {\n" +
                         "                                from: \"vin_s\",\n" +
-                        "                                to: \"vin_s\",\n" +
-                        "                                method: \"dv\"\n" +
+                        "                                to: \"vin_s\"\n" +
                         "                            },\n" +
                         "                            filter: \"doc_type_s:claim\"\n" +
                         "                        },\n" +
