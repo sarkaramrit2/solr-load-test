@@ -69,12 +69,12 @@
       <file leaf-file-name="QuerySolr_2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="139" column="70" lean-forward="false" selection-start-line="139" selection-start-column="70" selection-end-line="139" selection-end-column="70" />
+            <state relative-caret-position="-2243">
+              <caret line="55" column="61" lean-forward="false" selection-start-line="55" selection-start-column="61" selection-end-line="55" selection-end-column="61" />
               <folding>
-                <element signature="e#6430#6439#0" expanded="true" />
-                <element signature="e#8343#8917#0" expanded="true" />
-                <element signature="e#8916#8917#0" expanded="true" />
+                <element signature="e#6711#6720#0" expanded="true" />
+                <element signature="e#8624#9198#0" expanded="true" />
+                <element signature="e#9197#9198#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1304,12 +1304,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="139" column="70" lean-forward="false" selection-start-line="139" selection-start-column="70" selection-end-line="139" selection-end-column="70" />
+        <state relative-caret-position="-2243">
+          <caret line="55" column="61" lean-forward="false" selection-start-line="55" selection-start-column="61" selection-end-line="55" selection-end-column="61" />
           <folding>
-            <element signature="e#6430#6439#0" expanded="true" />
-            <element signature="e#8343#8917#0" expanded="true" />
-            <element signature="e#8916#8917#0" expanded="true" />
+            <element signature="e#6711#6720#0" expanded="true" />
+            <element signature="e#8624#9198#0" expanded="true" />
+            <element signature="e#9197#9198#0" expanded="true" />
           </folding>
         </state>
       </provider>

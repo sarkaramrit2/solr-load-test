@@ -52,7 +52,8 @@ public class QuerySolr_2 {
                 "                        domain: {\n" +
                 "                            join: {\n" +
                 "                                from: \"vin_s\",\n" +
-                "                                to: \"vin_s\"\n" +
+                "                                to: \"vin_s\",\n" +
+                "                                method: \"dv\",\n" +
                 "                            },\n" +
                 "                            filter: \"doc_type_s:claim\"\n" +
                 "                        },\n" +
@@ -64,7 +65,8 @@ public class QuerySolr_2 {
                 "\t\t\t\t                        domain: {\n" +
                 "\t\t\t\t                            join: {\n" +
                 "\t\t\t\t                                from: \"vin_s\",\n" +
-                "\t\t\t\t                                to: \"vin_s\"\n" +
+                "\t\t\t\t                                to: \"vin_s\",\n" +
+                "\t\t\t\t                                method: \"dv\"\n" +
                 "\t\t\t\t                            },\n" +
                 "\t\t\t\t                            filter: \"doc_type_s:defect\"\n" +
                 "\t\t\t\t                        },\n" +
@@ -97,7 +99,8 @@ public class QuerySolr_2 {
                         "                        domain: {\n" +
                         "                            join: {\n" +
                         "                                from: \"vin_s\",\n" +
-                        "                                to: \"vin_s\"\n" +
+                        "                                to: \"vin_s\",\n" +
+                        "                                method: \"dv\"\n" +
                         "                            },\n" +
                         "                            filter: \"doc_type_s:claim\"\n" +
                         "                        },\n" +
@@ -120,7 +123,8 @@ public class QuerySolr_2 {
                 "\t\t\t\tdomain: {\n" +
                 "\t\t\t\t\t\tjoin: {\n" +
                 "\t\t\t\t\t\t\t\tfrom: \"vin_s\",\n" +
-                "\t\t\t\t\t\t\t\tto: \"vin_s\"\n" +
+                "\t\t\t\t\t\t\t\tto: \"vin_s\",\n" +
+                "\t\t\t\t\t\t\t\tmethod: \"dv\"\n" +
                 "\t\t\t\t\t\t},\n" +
                 "\t\t\t\t\t\tfilter: \"doc_type_s:defect\"\n" +
                 "\t\t\t\t}\n" +
