@@ -112,6 +112,40 @@ public class QuerySolr_2 {
                         "    }\n" +
                         "}\n";
 
+
+        final String json_q2_2 =
+                "{\n" +
+                        "    models: {\n" +
+                        "        type: terms,\n" +
+                        "        field: \"v_model_s\",\n" +
+                        "        limit: 10,\n" +
+                        "\t\t\t\trefine: true,\n" +
+                        "        facet: {\n" +
+                        "            year_per_model: {\n" +
+                        "                type: terms,\n" +
+                        "                field: \"v_year_i\",\n" +
+                        "                limit: 10,\n" +
+                        "                facet: {\n" +
+                        "                    claim_month: {\n" +
+                        "                        domain: {\n" +
+                        "                            join: {\n" +
+                        "                                from: \"vin_s\",\n" +
+                        "                                to: \"vin_s\",\n" +
+                        "                                method: \"dv\"\n" +
+                        "                            },\n" +
+                        "                            filter: \"doc_type_s:claim\"\n" +
+                        "                        },\n" +
+                        "                        type: terms,\n" +
+                        "                        field: \"claim_opcode_s\",\n" +
+                        "                        limit: 10\n" +
+                        "                    }\n" +
+                        "                }\n" +
+                        "            }\n" +
+                        "        }\n" +
+                        "    }\n" +
+                        "}\n";
+
+
         final String json_q3 = "{\n" +
                 "    defects: {\n" +
                 "        type: terms,\n" +
@@ -142,7 +176,7 @@ public class QuerySolr_2 {
         System.out.println("simultaneous theads: " + j_1 + " : " + j_2 + " : " + j_3);
         long start = System.currentTimeMillis();
 
-        if (args[1].equals("3") || args[1].equals("10")) {
+        if (args[1].equals("3") || args[1].equals("10") || args[1].equals("11")) {
 
             for (int k = 0; k < (int) j_3; k++) {
 
@@ -192,7 +226,32 @@ public class QuerySolr_2 {
 
         }
 
-        if (args[1].equals("1") || args[1].equals("10")) {
+        if (args[1].equals("2_2") || args[1].equals("11")) {
+
+            for (int k = 0; k < j_2; k++) {
+
+                Thread t = new Thread() {
+                    @Override
+                    public void run() {
+
+                        try {
+                            QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
+                                    add("json.facet", json_q2_2)
+                            );
+                            avg.set(0, avg.get(0) + response.getQTime());
+                        } catch (Exception e) {
+                            System.err.println(e);
+                        }
+
+                    }
+                };
+                threads.add(t);
+                t.start();
+            }
+
+        }
+
+        if (args[1].equals("1") || args[1].equals("10") || args[1].equals("11")) {
 
             for (int k = 0; k < j_1; k++) {
 
