@@ -41,7 +41,7 @@ public class QuerySolr_2 {
                 "        type: terms,\n" +
                 "        field: \"v_model_s\",\n" +
                 "        limit: 10,\n" +
-                "\t\t\t\trefine: true,\n" +
+        //        "\t\t\t\trefine: true,\n" +
                 "        facet: {\n" +
                 "            year_per_model: {\n" +
                 "                type: terms,\n" +
@@ -87,7 +87,7 @@ public class QuerySolr_2 {
                         "        type: terms,\n" +
                         "        field: \"v_model_s\",\n" +
                         "        limit: 10,\n" +
-                        "\t\t\t\trefine: true,\n" +
+        //                "\t\t\t\trefine: true,\n" +
                         "        facet: {\n" +
                         "            year_per_model: {\n" +
                         "                type: terms,\n" +
@@ -119,7 +119,7 @@ public class QuerySolr_2 {
                         "        type: terms,\n" +
                         "        field: \"v_model_s\",\n" +
                         "        limit: 10,\n" +
-                        "\t\t\t\trefine: true,\n" +
+        //                "\t\t\t\trefine: true,\n" +
                         "        facet: {\n" +
                         "            year_per_model: {\n" +
                         "                type: terms,\n" +
@@ -151,7 +151,7 @@ public class QuerySolr_2 {
                 "        type: terms,\n" +
                 "        field: \"defect_shop_s\",\n" +
                 "        limit: 10,\n" +
-                "\t\t\t\trefine: true,\n" +
+        //        "\t\t\t\trefine: true,\n" +
                 "\t\t\t\tdomain: {\n" +
                 "\t\t\t\t\t\tjoin: {\n" +
                 "\t\t\t\t\t\t\t\tfrom: \"vin_s\",\n" +
