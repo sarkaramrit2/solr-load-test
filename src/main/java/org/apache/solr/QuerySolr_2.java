@@ -305,7 +305,6 @@ public class QuerySolr_2 {
 
                         try {
                             QueryResponse response = client.query(new ModifiableSolrParams()
-                                    .add("q", "doc_type_s:vehicle")
                                     .add("rows", "0")
                                     .add("q", "doc_type_s:vehicle AND v_year_i:[1995 TO *]")
                                     .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
