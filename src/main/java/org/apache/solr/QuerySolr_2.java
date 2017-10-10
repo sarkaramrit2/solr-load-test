@@ -186,9 +186,9 @@ public class QuerySolr_2 {
         int j_3 = Integer.parseInt(args[4]);
         int j_4 = Integer.parseInt(args[5]);
         int j_5 = Integer.parseInt(args[6]);
-        int j_6 = Integer.parseInt(args[7]);
-        int j_7 = Integer.parseInt(args[8]);
-        int j_8 = Integer.parseInt(args[9]);
+        int j_6 = Integer.parseInt(args[2]);
+        int j_7 = Integer.parseInt(args[3]);
+        int j_8 = Integer.parseInt(args[4]);
 
         final List<Integer> avg = new ArrayList<Integer>();
         avg.add(0);
