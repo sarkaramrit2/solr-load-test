@@ -163,12 +163,28 @@ public class QuerySolr_2 {
                 "    }\n" +
                 "}\n";
 
+        final String json_q4 = "{\n" +
+                "    models: {\n" +
+                "        type: terms,\n" +
+                "        field: \"v_model_s\",\n" +
+                "        limit: 10,\n" +
+                "        refine: true,\n" +
+                "        facet: {\n" +
+                "            year_per_model: {\n" +
+                "                type: terms,\n" +
+                "                field: \"v_year_i\",\n" +
+                "            }\n" +
+                "        }\n" +
+                "    }\n" +
+                "}\n";
+
         List<Thread> threads = new ArrayList<>(50);
 
 
         int j_1 = Integer.parseInt(args[2]);
         int j_2 = Integer.parseInt(args[3]);
         int j_3 = Integer.parseInt(args[4]);
+        int j_4 = Integer.parseInt(args[5]);
 
         final List<Integer> avg = new ArrayList<Integer>();
         avg.add(0);
@@ -262,6 +278,37 @@ public class QuerySolr_2 {
                         try {
                             QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
                                     add("json.facet", json_q1)
+                            );
+                            avg.set(0, avg.get(0) + response.getQTime());
+                        } catch (Exception e) {
+                            System.err.println(e);
+                        }
+
+                    }
+                };
+                threads.add(t);
+                t.start();
+            }
+        }
+
+        if (args[1].equals("4") || args[1].equals("10") || args[1].equals("11")) {
+
+            for (int k = 0; k < j_4; k++) {
+
+                Thread t = new Thread() {
+                    @Override
+                    public void run() {
+
+                        try {
+                            QueryResponse response = client.query(new ModifiableSolrParams()
+                                    .add("q", "doc_type_s:vehicle")
+                                    .add("rows", "0")
+                                    .add("q", "doc_type_s:vehicle AND v_year_i:[1995 TO *]")
+                                    .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
+                                    .add("fq","{!join from=vin_s to=vin_s v=$claim_q}")
+                                    .add("claim_q","doc_type_s:claim AND claim_milage_i:[* TO 10000]")
+                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
+                                    .add("json.facet", json_q4)
                             );
                             avg.set(0, avg.get(0) + response.getQTime());
                         } catch (Exception e) {
