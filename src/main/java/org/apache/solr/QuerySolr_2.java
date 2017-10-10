@@ -186,6 +186,9 @@ public class QuerySolr_2 {
         int j_3 = Integer.parseInt(args[4]);
         int j_4 = Integer.parseInt(args[5]);
         int j_5 = Integer.parseInt(args[6]);
+        int j_6 = Integer.parseInt(args[7]);
+        int j_7 = Integer.parseInt(args[8]);
+        int j_8 = Integer.parseInt(args[9]);
 
         final List<Integer> avg = new ArrayList<Integer>();
         avg.add(0);
@@ -336,6 +339,97 @@ public class QuerySolr_2 {
                                     .add("q", "doc_type_s:vehicle")
                                     .add("rows", "0")
                                     .add("q", "doc_type_s:vehicle AND v_year_i:(1995 1996 1997 1998 1999 2000 2001 2002 2003 2004)")
+                                    .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
+                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
+                                    .add("json.facet", json_q4)
+                            );
+                            avg.set(0, avg.get(0) + response.getQTime());
+                        } catch (Exception e) {
+                            System.err.println(e);
+                        }
+
+                    }
+                };
+                threads.add(t);
+                t.start();
+            }
+        }
+
+        if (args[1].equals("6") || args[1].equals("10") || args[1].equals("11")) {
+
+            for (int k = 0; k < j_6; k++) {
+
+                Thread t = new Thread() {
+                    @Override
+                    public void run() {
+
+                        try {
+                            QueryResponse response = client.query(new ModifiableSolrParams()
+                                    .add("q", "doc_type_s:vehicle")
+                                    .add("rows", "0")
+                                    .add("claim_q", "doc_type_s:claim AND claim_opcode_s:(c_op_0072 c_op_0097 c_op_0041 c_op_0084 c_op_0026)")
+                                    .add("q", "doc_type_s:vehicle AND v_year_i:(1995 1996 1997 1998 1999 2000 2001 2002 2003 2004)")
+                                    .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
+                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
+                                    .add("json.facet", json_q4)
+                            );
+                            avg.set(0, avg.get(0) + response.getQTime());
+                        } catch (Exception e) {
+                            System.err.println(e);
+                        }
+
+                    }
+                };
+                threads.add(t);
+                t.start();
+            }
+        }
+
+        if (args[1].equals("7") || args[1].equals("10") || args[1].equals("11")) {
+
+            for (int k = 0; k < j_7; k++) {
+
+                Thread t = new Thread() {
+                    @Override
+                    public void run() {
+
+                        try {
+                            QueryResponse response = client.query(new ModifiableSolrParams()
+                                    .add("q", "doc_type_s:vehicle")
+                                    .add("claim_q", "doc_type_s:claim AND claim_opcode_s:c_op_0072")
+                                    .add("rows", "0")
+                                    .add("q", "doc_type_s:vehicle AND v_year_i:(1995 1996 1997 1998 1999 2000 2001 2002 2003 2004)")
+                                    .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
+                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
+                                    .add("json.facet", json_q4)
+                            );
+                            avg.set(0, avg.get(0) + response.getQTime());
+                        } catch (Exception e) {
+                            System.err.println(e);
+                        }
+
+                    }
+                };
+                threads.add(t);
+                t.start();
+            }
+        }
+
+
+        if (args[1].equals("8") || args[1].equals("10") || args[1].equals("11")) {
+
+            for (int k = 0; k < j_8; k++) {
+
+                Thread t = new Thread() {
+                    @Override
+                    public void run() {
+
+                        try {
+                            QueryResponse response = client.query(new ModifiableSolrParams()
+                                    .add("q", "doc_type_s:vehicle")
+                                    .add("claim_q", "doc_type_s:claim AND claim_opcode_s:c_op_0072")
+                                    .add("rows", "0")
+                                    .add("q", "doc_type_s:vehicle AND v_year_i:1995")
                                     .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
                                     .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
                                     .add("json.facet", json_q4)
