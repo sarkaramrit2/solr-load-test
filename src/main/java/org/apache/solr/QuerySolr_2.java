@@ -185,6 +185,7 @@ public class QuerySolr_2 {
         int j_2 = Integer.parseInt(args[3]);
         int j_3 = Integer.parseInt(args[4]);
         int j_4 = Integer.parseInt(args[5]);
+        int j_5 = Integer.parseInt(args[6]);
 
         final List<Integer> avg = new ArrayList<Integer>();
         avg.add(0);
@@ -322,12 +323,42 @@ public class QuerySolr_2 {
             }
         }
 
+        if (args[1].equals("5") || args[1].equals("10") || args[1].equals("11")) {
+
+            for (int k = 0; k < j_5; k++) {
+
+                Thread t = new Thread() {
+                    @Override
+                    public void run() {
+
+                        try {
+                            QueryResponse response = client.query(new ModifiableSolrParams()
+                                    .add("q", "doc_type_s:vehicle")
+                                    .add("rows", "0")
+                                    .add("q", "doc_type_s:vehicle AND v_year_i:(1995 1996 1997 1998 1999 2000 2001 2002 2003 2004)")
+                                    .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
+                                    .add("fq","{!join from=vin_s to=vin_s v=$claim_q}")
+                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
+                                    .add("json.facet", json_q4)
+                            );
+                            avg.set(0, avg.get(0) + response.getQTime());
+                        } catch (Exception e) {
+                            System.err.println(e);
+                        }
+
+                    }
+                };
+                threads.add(t);
+                t.start();
+            }
+        }
+
         for (Thread thread : threads) thread.join();
 
         long end = System.currentTimeMillis();
 
         System.out.println("time spent: " + (end - start));
-        System.out.println("avg qtime: " + (double) avg.get(0) / (j_1 + j_2 + j_3 + j_4));
+        System.out.println("avg qtime: " + (double) avg.get(0) / (j_1 + j_2 + j_3 + j_4 + j_5));
 
     }
 }
