@@ -69,8 +69,8 @@
       <file leaf-file-name="QuerySolr_2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="345" column="50" lean-forward="true" selection-start-line="345" selection-start-column="50" selection-end-line="345" selection-end-column="50" />
+            <state relative-caret-position="271">
+              <caret line="339" column="0" lean-forward="false" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
               <folding>
                 <element signature="e#8993#9002#0" expanded="true" />
                 <element signature="e#9326#9918#0" expanded="true" />
@@ -83,8 +83,8 @@
                 <element signature="e#12324#12325#0" expanded="true" />
                 <element signature="e#12567#13738#0" expanded="true" />
                 <element signature="e#13737#13738#0" expanded="true" />
-                <element signature="e#13980#15088#0" expanded="true" />
-                <element signature="e#15087#15088#0" expanded="true" />
+                <element signature="e#13980#15000#0" expanded="true" />
+                <element signature="e#14999#15000#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -959,8 +959,8 @@
             <element signature="e#12324#12325#0" expanded="true" />
             <element signature="e#12567#13738#0" expanded="true" />
             <element signature="e#13737#13738#0" expanded="true" />
-            <element signature="e#13980#15088#0" expanded="true" />
-            <element signature="e#15087#15088#0" expanded="true" />
+            <element signature="e#13980#15000#0" expanded="true" />
+            <element signature="e#14999#15000#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1334,8 +1334,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="345" column="50" lean-forward="true" selection-start-line="345" selection-start-column="50" selection-end-line="345" selection-end-column="50" />
+        <state relative-caret-position="271">
+          <caret line="339" column="0" lean-forward="false" selection-start-line="339" selection-start-column="0" selection-end-line="339" selection-end-column="0" />
           <folding>
             <element signature="e#8993#9002#0" expanded="true" />
             <element signature="e#9326#9918#0" expanded="true" />
@@ -1348,8 +1348,8 @@
             <element signature="e#12324#12325#0" expanded="true" />
             <element signature="e#12567#13738#0" expanded="true" />
             <element signature="e#13737#13738#0" expanded="true" />
-            <element signature="e#13980#15088#0" expanded="true" />
-            <element signature="e#15087#15088#0" expanded="true" />
+            <element signature="e#13980#15000#0" expanded="true" />
+            <element signature="e#14999#15000#0" expanded="true" />
           </folding>
         </state>
       </provider>
