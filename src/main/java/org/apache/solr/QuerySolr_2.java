@@ -398,7 +398,7 @@ public class QuerySolr_2 {
                                     .add("q", "doc_type_s:vehicle AND v_year_i:(1995 1996 1997 1998 1999 2000 2001 2002 2003 2004)")
                                     .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
                                     .add("fq","{!join from=vin_s to=vin_s v=claim_q}")
-                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
+                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:d_shop_01")
                                     .add("json.facet", json_q4)
                             );
                             avg.set(0, avg.get(0) + response.getQTime());
