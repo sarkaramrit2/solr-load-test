@@ -336,7 +336,6 @@ public class QuerySolr_2 {
 
                         try {
                             QueryResponse response = client.query(new ModifiableSolrParams()
-                                    .add("q", "doc_type_s:vehicle")
                                     .add("rows", "0")
                                     .add("q", "doc_type_s:vehicle AND v_year_i:(1995 1996 1997 1998 1999 2000 2001 2002 2003 2004)")
                                     .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
@@ -365,7 +364,6 @@ public class QuerySolr_2 {
 
                         try {
                             QueryResponse response = client.query(new ModifiableSolrParams()
-                                    .add("q", "doc_type_s:vehicle")
                                     .add("rows", "0")
                                     .add("claim_q", "doc_type_s:claim AND claim_opcode_s:(c_op_0072 c_op_0097 c_op_0041 c_op_0084 c_op_0026)")
                                     .add("q", "doc_type_s:vehicle AND v_year_i:(1995 1996 1997 1998 1999 2000 2001 2002 2003 2004)")
@@ -396,7 +394,6 @@ public class QuerySolr_2 {
 
                         try {
                             QueryResponse response = client.query(new ModifiableSolrParams()
-                                    .add("q", "doc_type_s:vehicle")
                                     .add("claim_q", "doc_type_s:claim AND claim_opcode_s:c_op_0072")
                                     .add("rows", "0")
                                     .add("q", "doc_type_s:vehicle AND v_year_i:(1995 1996 1997 1998 1999 2000 2001 2002 2003 2004)")
@@ -428,7 +425,6 @@ public class QuerySolr_2 {
 
                         try {
                             QueryResponse response = client.query(new ModifiableSolrParams()
-                                    .add("q", "doc_type_s:vehicle")
                                     .add("claim_q", "doc_type_s:claim AND claim_opcode_s:c_op_0072")
                                     .add("rows", "0")
                                     .add("q", "doc_type_s:vehicle AND v_year_i:1995")
