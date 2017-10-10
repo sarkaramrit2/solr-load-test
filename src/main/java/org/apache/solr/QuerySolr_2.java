@@ -327,7 +327,7 @@ public class QuerySolr_2 {
         long end = System.currentTimeMillis();
 
         System.out.println("time spent: " + (end - start));
-        System.out.println("avg qtime: " + (double) avg.get(0) / (j_1 + j_2 + j_3));
+        System.out.println("avg qtime: " + (double) avg.get(0) / (j_1 + j_2 + j_3 + j_4));
 
     }
 }

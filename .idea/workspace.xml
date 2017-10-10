@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a83e0936-c639-4b09-b1b9-98f31ca6a922" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java" />
     </list>
     <ignored path="solr-load-test.iws" />
@@ -70,8 +69,8 @@
       <file leaf-file-name="QuerySolr_2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4515">
-              <caret line="316" column="0" lean-forward="true" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+            <state relative-caret-position="411">
+              <caret line="329" column="87" lean-forward="false" selection-start-line="329" selection-start-column="87" selection-end-line="329" selection-end-column="87" />
               <folding>
                 <element signature="e#8948#8957#0" expanded="true" />
                 <element signature="e#9281#9873#0" expanded="true" />
@@ -1331,8 +1330,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4515">
-          <caret line="316" column="0" lean-forward="true" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+        <state relative-caret-position="411">
+          <caret line="329" column="87" lean-forward="false" selection-start-line="329" selection-start-column="87" selection-end-line="329" selection-end-column="87" />
           <folding>
             <element signature="e#8948#8957#0" expanded="true" />
             <element signature="e#9281#9873#0" expanded="true" />
