@@ -126,6 +126,45 @@ public class QuerySolr_2 {
                 "    }\n" +
                 "}\n";
 
+
+        final String json_q1_b = "{  \n" +
+                "   defect_shops:{  \n" +
+                "      type:terms,\n" +
+                "      field:\"defect_shop_s\",\n" +
+                "      limit:3,\n" +
+                "      refine:true,\n" +
+                "      facet:{  \n" +
+                "         models:{  \n" +
+                "            type:terms,\n" +
+                "            field:\"v_model_s\",\n" +
+                "            limit:3,\n" +
+                "            domain:{  \n" +
+                "               join:{  \n" +
+                "                  from:\"vin_s\",\n" +
+                "                  to:\"vin_s\",\n" +
+                "                  method:dv\n" +
+                "               },\n" +
+                "               filter:\"doc_type_s:vehicle\"\n" +
+                "            },\n" +
+                "            facet:{\n" +
+                "               claim_opcode:{\n" +
+                "                  domain:{\n" +
+                "                     join:{  \n" +
+                "                        from:\"vin_s\",\n" +
+                "                        to:\"vin_s\",\n" +
+                "                        method:dv\n" +
+                "                     },\n" +
+                "                     filter:\"doc_type_s:claim\"\n" +
+                "                  },\n" +
+                "                  type:terms,\n" +
+                "                  field:\"claim_opcode_s\",\n" +
+                "                  limit:3\n" +
+                "               }\n" +
+                "            }\n" +
+                "         }\n" +
+                "      }\n" +
+                "   }\n";
+
         final String json_q2 =
                 "{\n" +
                         "    models: {\n" +
@@ -374,6 +413,30 @@ public class QuerySolr_2 {
                         try {
                             QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
                                     add("json.facet", json_q1_a)
+                            );
+                            avg.set(0, avg.get(0) + response.getQTime());
+                        } catch (Exception e) {
+                            System.err.println(e);
+                        }
+
+                    }
+                };
+                threads.add(t);
+                t.start();
+            }
+        }
+
+        if (args[1].equals("1_b") || args[1].equals("10") || args[1].equals("11")) {
+
+            for (int k = 0; k < j_1; k++) {
+
+                Thread t = new Thread() {
+                    @Override
+                    public void run() {
+
+                        try {
+                            QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:defect").
+                                    add("json.facet", json_q1_b)
                             );
                             avg.set(0, avg.get(0) + response.getQTime());
                         } catch (Exception e) {
