@@ -163,7 +163,7 @@ public class QuerySolr_2 {
                 "            }\n" +
                 "         }\n" +
                 "      }\n" +
-                "   }\n";
+                "   }}\n";
 
         final String json_q2 =
                 "{\n" +
