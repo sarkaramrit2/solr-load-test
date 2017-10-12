@@ -81,6 +81,51 @@ public class QuerySolr_2 {
                 "    }\n" +
                 "}\n";
 
+        final String json_q1_a = "{\n" +
+                "    models: {\n" +
+                "        type: terms,\n" +
+                "        field: \"v_model_s\",\n" +
+                "        limit: 3,\n" +
+                //"\t\t\t\trefine: true,\n" +
+                "        facet: {\n" +
+                "            year_per_model: {\n" +
+                "                type: terms,\n" +
+                "                field: \"v_year_i\",\n" +
+                "                limit: 3,\n" +
+                "                facet: {\n" +
+                "                    claim_month: {\n" +
+                "                        domain: {\n" +
+                "                            join: {\n" +
+                "                                from: \"vin_s\",\n" +
+                "                                to: \"vin_s\"\n" +
+                "                            },\n" +
+                "                            filter: \"doc_type_s:claim\"\n" +
+                "                        },\n" +
+                "                        type: terms,\n" +
+                "                        field: \"claim_opcode_s\",\n" +
+                "                        limit: 3,\n" +
+                "\t\t\t\t\t\t\t\t\t\t\t\tfacet: {\n" +
+                "\t\t\t\t                    defect_shop: {\n" +
+                "\t\t\t\t                        domain: {\n" +
+                "\t\t\t\t                            join: {\n" +
+                "\t\t\t\t                                from: \"vin_s\",\n" +
+                "\t\t\t\t                                to: \"vin_s\",\n" +
+                "\t\t\t\t                                method: \"dv\"\n" +
+                "\t\t\t\t                            },\n" +
+                "\t\t\t\t                            filter: \"doc_type_s:defect\"\n" +
+                "\t\t\t\t                        },\n" +
+                "\t\t\t\t                        type: terms,\n" +
+                "\t\t\t\t                        field: \"defect_shop_s\",\n" +
+                "\t\t\t\t                        limit: 3\n" +
+                "\t\t\t\t                    }\n" +
+                "\t\t\t\t                }\n" +
+                "                    }\n" +
+                "                }\n" +
+                "            }\n" +
+                "        }\n" +
+                "    }\n" +
+                "}\n";
+
         final String json_q2 =
                 "{\n" +
                         "    models: {\n" +
@@ -175,6 +220,29 @@ public class QuerySolr_2 {
                 "                field: \"v_year_i\",\n" +
                 "            }\n" +
                 "        }\n" +
+                "    }\n" +
+                "}\n";
+
+        final String json_q4_a = "{\n" +
+                "    models: {\n" +
+                "        type: terms,\n" +
+                "        field: \"v_model_s\",\n" +
+                "        limit: 10,\n" +
+                "        refine: true,\n" +
+                "        facet: {\n" +
+                "            year_per_model: {\n" +
+                "                type: terms,\n" +
+                "                field: \"v_year_i\",\n" +
+                "            }\n" +
+                "        }\n" +
+                "    },\n" +
+                "    \"avg_horsepower\" : \"avg(v_horsepower_i)\",\n" +
+                "    \"unique_years\" : \"unique(v_year_i)\",\n" +
+                "    plants: {\n" +
+                "        type: terms,\n" +
+                "        field: \"v_plant_s\",\n" +
+                "        limit: 10,\n" +
+                "        refine: true\n" +
                 "    }\n" +
                 "}\n";
 
@@ -295,6 +363,30 @@ public class QuerySolr_2 {
             }
         }
 
+        if (args[1].equals("1_a") || args[1].equals("10") || args[1].equals("11")) {
+
+            for (int k = 0; k < j_1; k++) {
+
+                Thread t = new Thread() {
+                    @Override
+                    public void run() {
+
+                        try {
+                            QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
+                                    add("json.facet", json_q1_a)
+                            );
+                            avg.set(0, avg.get(0) + response.getQTime());
+                        } catch (Exception e) {
+                            System.err.println(e);
+                        }
+
+                    }
+                };
+                threads.add(t);
+                t.start();
+            }
+        }
+
         if (args[1].equals("4") || args[1].equals("10") || args[1].equals("11")) {
 
             for (int k = 0; k < j_4; k++) {
@@ -312,6 +404,36 @@ public class QuerySolr_2 {
                                     .add("claim_q","doc_type_s:claim AND claim_milage_i:[* TO 10000]")
                                     .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
                                     .add("json.facet", json_q4)
+                            );
+                            avg.set(0, avg.get(0) + response.getQTime());
+                        } catch (Exception e) {
+                            System.err.println(e);
+                        }
+
+                    }
+                };
+                threads.add(t);
+                t.start();
+            }
+        }
+
+        if (args[1].equals("4_a") || args[1].equals("10") || args[1].equals("11")) {
+
+            for (int k = 0; k < j_4; k++) {
+
+                Thread t = new Thread() {
+                    @Override
+                    public void run() {
+
+                        try {
+                            QueryResponse response = client.query(new ModifiableSolrParams()
+                                    .add("rows", "0")
+                                    .add("q", "doc_type_s:vehicle AND v_year_i:[1995 TO *]")
+                                    .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
+                                    .add("fq","{!join from=vin_s to=vin_s v=$claim_q}")
+                                    .add("claim_q","doc_type_s:claim AND claim_milage_i:[* TO 10000]")
+                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
+                                    .add("json.facet", json_q4_a)
                             );
                             avg.set(0, avg.get(0) + response.getQTime());
                         } catch (Exception e) {
