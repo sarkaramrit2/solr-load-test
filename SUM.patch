@@ -1,0 +1,403 @@
+diff --git a/solr/core/src/java/org/apache/solr/handler/StreamHandler.java b/solr/core/src/java/org/apache/solr/handler/StreamHandler.java
+index 4a5ef331d7..b669eae0b7 100644
+--- a/solr/core/src/java/org/apache/solr/handler/StreamHandler.java
++++ b/solr/core/src/java/org/apache/solr/handler/StreamHandler.java
+@@ -175,6 +175,8 @@ public class StreamHandler extends RequestHandlerBase implements SolrCoreAware,
+         .withFunctionName("timeseries", TimeSeriesStream.class)
+         .withFunctionName("tuple", TupStream.class)
+         .withFunctionName("sql", SqlStream.class)
++        .withFunctionName("rows", RowsStream.class)
++        .withFunctionName("sumRows", SumsStream.class)
+ 
+         // metrics
+         .withFunctionName("min", MinMetric.class)
+diff --git a/solr/solrj/src/java/org/apache/solr/client/solrj/io/stream/RowsStream.java b/solr/solrj/src/java/org/apache/solr/client/solrj/io/stream/RowsStream.java
+new file mode 100644
+index 0000000000..407c43f29f
+--- /dev/null
++++ b/solr/solrj/src/java/org/apache/solr/client/solrj/io/stream/RowsStream.java
+@@ -0,0 +1,187 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package org.apache.solr.client.solrj.io.stream;
++
++import java.io.IOException;
++import java.util.ArrayList;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Locale;
++
++import org.apache.solr.client.solrj.io.Tuple;
++import org.apache.solr.client.solrj.io.comp.StreamComparator;
++import org.apache.solr.client.solrj.io.stream.expr.Explanation;
++import org.apache.solr.client.solrj.io.stream.expr.Explanation.ExpressionType;
++import org.apache.solr.client.solrj.io.stream.expr.Expressible;
++import org.apache.solr.client.solrj.io.stream.expr.StreamExplanation;
++import org.apache.solr.client.solrj.io.stream.expr.StreamExpression;
++import org.apache.solr.client.solrj.io.stream.expr.StreamFactory;
++
++
++/**
++ *  Example Stream for calculating total rows exported
++ *
++ **/
++
++public class RowsStream extends TupleStream implements Expressible {
++
++  private static final long serialVersionUID = 1;
++
++  private TupleStream incomingStream;
++  private long tupleNumber;
++
++  private boolean finished = false;
++
++  public RowsStream(TupleStream incomingStream) throws IOException {
++    init(incomingStream);
++  }
++
++  /**
++   * Required constructor accepting a StreamExpression and StreamFactory. The factory is used to build a valid
++   * RowsStream object out of the passed in expression. If any errors are found we will fail fast and
++   * throw an appropriate exception.
++   */
++  public RowsStream(StreamExpression expression, StreamFactory factory) throws IOException {
++    // grab all parameters out
++    List<StreamExpression> streamExpressions = factory.getExpressionOperandsRepresentingTypes(expression, Expressible.class, TupleStream.class);
++
++    // validate expression contains only what we want.
++    if (expression.getParameters().size() != streamExpressions.size()) {
++      throw new IOException(String.format(Locale.ROOT, "Invalid expression %s - unknown operands found", expression));
++    }
++
++    // construct the incoming stream
++    TupleStream stream = factory.constructStream(streamExpressions.get(0));
++    init(stream);
++  }
++
++  private void init(TupleStream incomingStream) throws IOException {
++    this.incomingStream = incomingStream;
++    this.tupleNumber = 0;
++  }
++
++  /**
++   * Open the incoming stream.
++   */
++  public void open() throws IOException {
++    incomingStream.open();
++  }
++
++  /**
++   * Close the incoming stream.
++   */
++  public void close() throws IOException {
++    incomingStream.close();
++  }
++
++  /**
++   * Pass the context down to the incoming stream.
++   * There's nothing in it that this stream might care about.
++   */
++  public void setStreamContext(StreamContext context) {
++    this.incomingStream.setStreamContext(context);
++  }
++
++  /**
++   * Return list of all incoming streams
++   */
++  public List<TupleStream> children() {
++    List<TupleStream> streams = new ArrayList<>();
++    streams.add(incomingStream);
++    return streams;
++  }
++
++  /**
++   * As of now not used by anything. Just return 0.
++   * Intention is to allow us to set a cost of executing this stream to support
++   * possible stream optimizations.
++   */
++  public int getCost() {
++    return 0;
++  }
++
++  /**
++   * Return a comparator describing the sort order of the tuples coming out
++   * of this stream. Because we don't modify the incoming order we can just
++   * return that
++   */
++  public StreamComparator getStreamSort() {
++    return incomingStream.getStreamSort();
++  }
++
++  /**
++   * Convert this object into a valid StreamExpression
++   */
++  @Override
++  public StreamExpression toExpression(StreamFactory factory) throws IOException {
++    return toExpression(factory, true);
++  }
++
++  private StreamExpression toExpression(StreamFactory factory, boolean includeStreams) throws IOException {
++    // function name
++    StreamExpression expression = new StreamExpression(factory.getFunctionName(this.getClass()));
++
++    if (includeStreams) {
++      if (incomingStream instanceof Expressible) {
++        expression.addParameter(((Expressible) incomingStream).toExpression(factory));
++      } else {
++        throw new IOException("This RowsStream contains a non-expressible TupleStream - it cannot be converted to an expression");
++      }
++    } else {
++      expression.addParameter("<stream>");
++    }
++
++    return expression;
++  }
++
++  /**
++   * Create an explanation of this stream object
++   */
++  @Override
++  public Explanation toExplanation(StreamFactory factory) throws IOException {
++
++    return new StreamExplanation(getStreamNodeId().toString())
++        .withChildren(new Explanation[]{
++            incomingStream.toExplanation(factory)
++        })
++        .withFunctionName(factory.getFunctionName(this.getClass()))
++        .withImplementingClass(this.getClass().getName())
++        .withExpressionType(ExpressionType.STREAM_DECORATOR)
++        .withExpression(toExpression(factory, false).toString());
++  }
++
++  /**
++   * Read and count tuples and write the final count when we see EOF
++   */
++  public Tuple read() throws IOException {
++    while (true) {
++      Tuple t = new Tuple(new HashMap<String, Object>());
++      if (finished) {
++        t.EOF = true;
++        return t;
++      } else {
++        Tuple tuple = incomingStream.read();
++        if (tuple.EOF) {
++          finished = true;
++          t.fields.put("numRows", tupleNumber);
++          return t;
++        }
++        tupleNumber += 1;
++      }
++    }
++  }
++}
+\ No newline at end of file
+diff --git a/solr/solrj/src/java/org/apache/solr/client/solrj/io/stream/SumsStream.java b/solr/solrj/src/java/org/apache/solr/client/solrj/io/stream/SumsStream.java
+new file mode 100644
+index 0000000000..22d00c8f8c
+--- /dev/null
++++ b/solr/solrj/src/java/org/apache/solr/client/solrj/io/stream/SumsStream.java
+@@ -0,0 +1,189 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package org.apache.solr.client.solrj.io.stream;
++
++import java.io.IOException;
++import java.util.ArrayList;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Locale;
++
++import org.apache.solr.client.solrj.io.Tuple;
++import org.apache.solr.client.solrj.io.comp.StreamComparator;
++import org.apache.solr.client.solrj.io.stream.expr.Explanation;
++import org.apache.solr.client.solrj.io.stream.expr.Explanation.ExpressionType;
++import org.apache.solr.client.solrj.io.stream.expr.Expressible;
++import org.apache.solr.client.solrj.io.stream.expr.StreamExplanation;
++import org.apache.solr.client.solrj.io.stream.expr.StreamExpression;
++import org.apache.solr.client.solrj.io.stream.expr.StreamFactory;
++
++
++/**
++ *  Example Stream for calculating total rows exported
++ *
++ **/
++
++public class SumsStream extends TupleStream implements Expressible {
++
++  private static final long serialVersionUID = 1;
++
++  private TupleStream incomingStream;
++  private long sumRows;
++
++  private boolean finished = false;
++
++  public SumsStream(TupleStream incomingStream) throws IOException {
++    init(incomingStream);
++  }
++
++  /**
++   * Required constructor accepting a StreamExpression and StreamFactory. The factory is used to build a valid
++   * RowsStream object out of the passed in expression. If any errors are found we will fail fast and
++   * throw an appropriate exception.
++   */
++  public SumsStream(StreamExpression expression, StreamFactory factory) throws IOException {
++    // grab all parameters out
++    List<StreamExpression> streamExpressions = factory.getExpressionOperandsRepresentingTypes(expression, Expressible.class, TupleStream.class);
++
++    // validate expression contains only what we want.
++    if (expression.getParameters().size() != streamExpressions.size()) {
++      throw new IOException(String.format(Locale.ROOT, "Invalid expression %s - unknown operands found", expression));
++    }
++
++    // construct the incoming stream
++    TupleStream stream = factory.constructStream(streamExpressions.get(0));
++    init(stream);
++  }
++
++  private void init(TupleStream incomingStream) throws IOException {
++    this.incomingStream = incomingStream;
++    this.sumRows = 0;
++  }
++
++  /**
++   * Open the incoming stream.
++   */
++  public void open() throws IOException {
++    incomingStream.open();
++  }
++
++  /**
++   * Close the incoming stream.
++   */
++  public void close() throws IOException {
++    incomingStream.close();
++  }
++
++  /**
++   * Pass the context down to the incoming stream.
++   * There's nothing in it that this stream might care about.
++   */
++  public void setStreamContext(StreamContext context) {
++    this.incomingStream.setStreamContext(context);
++  }
++
++  /**
++   * Return list of all incoming streams
++   */
++  public List<TupleStream> children() {
++    List<TupleStream> streams = new ArrayList<>();
++    streams.add(incomingStream);
++    return streams;
++  }
++
++  /**
++   * As of now not used by anything. Just return 0.
++   * Intention is to allow us to set a cost of executing this stream to support
++   * possible stream optimizations.
++   */
++  public int getCost() {
++    return 0;
++  }
++
++  /**
++   * Return a comparator describing the sort order of the tuples coming out
++   * of this stream. Because we don't modify the incoming order we can just
++   * return that
++   */
++  public StreamComparator getStreamSort() {
++    return incomingStream.getStreamSort();
++  }
++
++  /**
++   * Convert this object into a valid StreamExpression
++   */
++  @Override
++  public StreamExpression toExpression(StreamFactory factory) throws IOException {
++    return toExpression(factory, true);
++  }
++
++  private StreamExpression toExpression(StreamFactory factory, boolean includeStreams) throws IOException {
++    // function name
++    StreamExpression expression = new StreamExpression(factory.getFunctionName(this.getClass()));
++
++    if (includeStreams) {
++      if (incomingStream instanceof Expressible) {
++        expression.addParameter(((Expressible) incomingStream).toExpression(factory));
++      } else {
++        throw new IOException("This RowsStream contains a non-expressible TupleStream - it cannot be converted to an expression");
++      }
++    } else {
++      expression.addParameter("<stream>");
++    }
++
++    return expression;
++  }
++
++  /**
++   * Create an explanation of this stream object
++   */
++  @Override
++  public Explanation toExplanation(StreamFactory factory) throws IOException {
++
++    return new StreamExplanation(getStreamNodeId().toString())
++        .withChildren(new Explanation[]{
++            incomingStream.toExplanation(factory)
++        })
++        .withFunctionName(factory.getFunctionName(this.getClass()))
++        .withImplementingClass(this.getClass().getName())
++        .withExpressionType(ExpressionType.STREAM_DECORATOR)
++        .withExpression(toExpression(factory, false).toString());
++  }
++
++  /**
++   * Read and count tuples and write the final count when we see EOF
++   */
++  public Tuple read() throws IOException {
++    while (true) {
++      Tuple t = new Tuple(new HashMap<String, Object>());
++      if (finished) {
++        t.EOF = true;
++        return t;
++      } else {
++        Tuple tuple = incomingStream.read();
++        if (tuple.EOF) {
++          finished = true;
++          t.fields.put("sumRows", sumRows);
++          return t;
++        }
++        if (tuple.getLong("numRows") != null) {
++          sumRows += tuple.getLong("numRows");
++        }
++      }
++    }
++  }
++}
+\ No newline at end of file
