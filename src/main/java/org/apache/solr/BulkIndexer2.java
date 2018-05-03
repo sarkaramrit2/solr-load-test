@@ -1,106 +1,112 @@
 package org.apache.solr;
 
 
-import org.apache.commons.collections.map.UnmodifiableMap;
 import org.apache.lucene.util.TestUtil;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.CloudSolrClient;
 import org.apache.solr.client.solrj.request.UpdateRequest;
-import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrInputDocument;
-import org.apache.solr.common.params.MapSolrParams;
-import org.apache.solr.common.params.ModifiableSolrParams;
+import org.apache.solr.common.util.NamedList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static java.util.Map.Entry;
-
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class BulkIndexer2 {
 
+    private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+    static String[] Strings = new String[3];
     private static Random r = new Random();
 
-    private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+    public static void main(String args[]) throws Exception {
 
-    public static void main(String args[]) throws IOException, SolrServerException, Exception {
-
-        //final String zkHost = "oregon-ms:9983";
         final String zkHost = "localhost:9983";
-        final CloudSolrClient client = new CloudSolrClient(zkHost);
-        final String collection = "collection1";
+        //final String zkHost = "apple:9983";
+        final CloudSolrClient client = new CloudSolrClient.Builder().withZkHost(zkHost).build();
+        final String collection = "test";
         client.setDefaultCollection(collection);
 
-        System.out.println("start :: " +System.currentTimeMillis());
+        for (int i = 0; i < 3; i++) {
+            Strings[i] = createSentance1(7);
+        }
+
+        System.out.println("start :: " + System.currentTimeMillis());
 
         List<Thread> threads = new ArrayList<>(100);
 
         final UpdateRequest updateRequest = new UpdateRequest();
 
-        for (int k = 0; k < 3; k++) {
+        for (int k = 0; k < 1; k++) {
             int index = ThreadLocalRandom.current().nextInt(5);
             Thread t = new Thread() {
                 @Override
                 public void run() {
                     for (int j = 0; j < 1000; j++) {
+                    //while (true) {
                         List<SolrInputDocument> docs = new ArrayList<>();
-                        for (int i = 0; i < 1000; i++) {
+                        for (int i = 0; i < 2000; i++) {
                             SolrInputDocument document = new SolrInputDocument();
                             document.addField("id", UUID.randomUUID().toString());
-                            document.addField("cat1_s", createSentance(20));
-                            document.addField("cat2_s", createSentance(20));
-                            document.addField("cat3_s", createSentance(20));
-                            //document.addField("cat4_s", createSentance(20));
-                            //document.addField("cat5_s", createSentance(20));
-                            //document.addField("cat1_str", createSentance(20));
-                            //document.addField("cat2_str", createSentance(20));
-                            //document.addField("cat3_str", createSentance(20));
-                            //document.addField("cat4_str", createSentance(20));
-                            //document.addField("cat5_str", createSentance(20));
-                            //document.addField("add_s", inputs_all[ThreadLocalRandom.current().nextInt(20)]);
+                            document.addField("member_id_i", new Random().nextInt(3) % 3);
+                            //document.addField("subtotal_i", 1000 + new Random().nextInt(3) % 3);
+                            //document.addField("quantity_l", Math.abs(new Random().nextLong() % 3));
+                            document.addField("order_no_t", Strings[new Random().nextInt(3) % 3]);
+                            //document.addField("ship_addr1_s", Strings[new Random().nextInt(3) % 3]);
+                            //document.addField("ship_addr2_s", Strings[new Random().nextInt(3) % 3]);
+                            //document.addField("ship_addr3_s", Strings[new Random().nextInt(3) % 3]);
+                            //document.addField("ship_addr4_s", Strings[new Random().nextInt(3) % 3]);
+                            //document.addField("ship_addr5_s", Strings[new Random().nextInt(3) % 3]);
                             docs.add(document);
                         }
                         UpdateRequest updateRequest = new UpdateRequest();
-                        //updateRequest.setParam("update.chain","regular-update-chain");
                         updateRequest.add(docs);
                         try {
-                            client.request(updateRequest, collection);
+                            System.out.println("updateRequest: " + updateRequest);
+                            //updateRequest.process(client);
+                            NamedList resp = client.request(updateRequest, collection);
+                            //
+                            log.info("stop here");
+                            updateRequest.commit(client, collection);
                         } catch (Exception e) {
 
                         }
                         docs.clear();
                     }
-                    /*try{
-                        updateRequest.commit(client, collection);
-                    } catch (Exception e) {
-
-                    }*/
                 }
             };
+
             threads.add(t);
             t.start();
         }
-        for (Thread thread: threads) thread.join();
-        //updateRequest.commit(client, collection);
-        System.out.println("end :: " +System.currentTimeMillis());
+        for (Thread thread : threads) thread.join();
+        updateRequest.commit(client, collection);
+        System.out.println("end :: " + System.currentTimeMillis());
         System.exit(0);
-        /*while (true) {
-            client.query(new ModifiableSolrParams().add("q","*:*").add("sort","external_version_field_s desc"));
-            client.query(new ModifiableSolrParams().add("q","*:*").add("sort","external_version_field_s asc"));
-            client.query(new ModifiableSolrParams().add("q",createSentance(3)).add("sort","external_version_field_s desc"));
-        }*/
     }
 
     private static String createSentance(int numWords) {
         //Sentence with numWords and 3-7 letters in each word
         StringBuilder sb = new StringBuilder(numWords * 5);
         for (int i = 0; i < numWords; i++) {
-            sb.append("abcd" + " ");
+            sb.append("abcd");
         }
         return sb.toString();
     }
+
+    private static String createSentance1(int numWords) {
+        //Sentence with numWords and 3-7 letters in each word
+        StringBuilder sb = new StringBuilder(numWords * 2);
+        for (int i = 0; i < numWords; i++) {
+            sb.append(TestUtil.randomSimpleString(r, 1, 1));
+        }
+        return sb.toString();
+    }
+
 
 }

@@ -1,6 +1,5 @@
 package org.apache.solr;
 
-import jodd.datetime.TimeUtil;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.*;
@@ -31,7 +30,7 @@ public class MultipleFieldsTest {
         try (Directory dir = FSDirectory.open(Paths.get("index_a_a_b"))) {
             buildIndex(dir, "aaa", "aaa", "bbb");
         }
-        System.out.println("index_a_a_b took" + TimeUnit.SECONDS.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS) + " seconds to build" );
+        System.out.println("index_a_a_b took" + TimeUnit.SECONDS.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS) + " seconds to build");
 
 
 //        System.out.println("Warump @ " + System.nanoTime());
@@ -77,7 +76,7 @@ public class MultipleFieldsTest {
 
         try (IndexWriter writer = new IndexWriter(dir, iwc)) {
             List<Document> docs = new ArrayList<>(1000);
-            for (int docNum = 0; docNum < 1000*100; docNum++) {
+            for (int docNum = 0; docNum < 1000 * 100; docNum++) {
                 if (0 == docNum % 1000) System.out.println(docNum);
                 Document doc = new Document();
                 for (int fieldNum = 0; fieldNum < 500; fieldNum++) {
@@ -92,7 +91,7 @@ public class MultipleFieldsTest {
                     doc.add(new SortedDocValuesField(dv + "_" + fieldNum, new BytesRef(fieldValue.toString())));
                 }
                 docs.add(doc);
-                if (docNum % 1000 ==0) {
+                if (docNum % 1000 == 0) {
                     writer.addDocuments(docs);
                     writer.commit();
                     docs.clear();

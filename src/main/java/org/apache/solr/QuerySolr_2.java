@@ -2,8 +2,6 @@ package org.apache.solr;
 
 
 import org.apache.http.client.HttpClient;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.lucene.util.TestUtil;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.CloudSolrClient;
 import org.apache.solr.client.solrj.impl.HttpClientUtil;
@@ -16,7 +14,6 @@ import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class QuerySolr_2 {
 
@@ -24,7 +21,7 @@ public class QuerySolr_2 {
 
     public static void main(String args[]) throws IOException, SolrServerException, Exception {
 
-        final String zkHost = "34.210.73.96:9983";
+        final String zkHost = "toyota:9983";
         final String collection = args[0];
         HttpClient httpClient;
         ModifiableSolrParams params = new ModifiableSolrParams();
@@ -287,7 +284,6 @@ public class QuerySolr_2 {
 
         List<Thread> threads = new ArrayList<>(50);
 
-
         int j_1 = Integer.parseInt(args[2]);
         int j_2 = Integer.parseInt(args[3]);
         int j_3 = Integer.parseInt(args[4]);
@@ -365,6 +361,7 @@ public class QuerySolr_2 {
                             QueryResponse response = client.query(new ModifiableSolrParams().add("q", "doc_type_s:vehicle").
                                     add("json.facet", json_q2_2)
                             );
+
                             avg.set(0, avg.get(0) + response.getQTime());
                         } catch (Exception e) {
                             System.err.println(e);
@@ -462,10 +459,10 @@ public class QuerySolr_2 {
                             QueryResponse response = client.query(new ModifiableSolrParams()
                                     .add("rows", "0")
                                     .add("q", "doc_type_s:vehicle AND v_year_i:[1995 TO *]")
-                                    .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
-                                    .add("fq","{!join from=vin_s to=vin_s v=$claim_q}")
-                                    .add("claim_q","doc_type_s:claim AND claim_milage_i:[* TO 10000]")
-                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
+                                    .add("fq", "{!join from=vin_s to=vin_s v=$defect_q}")
+                                    .add("fq", "{!join from=vin_s to=vin_s v=$claim_q}")
+                                    .add("claim_q", "doc_type_s:claim AND claim_milage_i:[* TO 10000]")
+                                    .add("defect_q", "doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
                                     .add("json.facet", json_q4)
                             );
                             avg.set(0, avg.get(0) + response.getQTime());
@@ -492,10 +489,10 @@ public class QuerySolr_2 {
                             QueryResponse response = client.query(new ModifiableSolrParams()
                                     .add("rows", "0")
                                     .add("q", "doc_type_s:vehicle AND v_year_i:[1995 TO *]")
-                                    .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
-                                    .add("fq","{!join from=vin_s to=vin_s v=$claim_q}")
-                                    .add("claim_q","doc_type_s:claim AND claim_milage_i:[* TO 10000]")
-                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
+                                    .add("fq", "{!join from=vin_s to=vin_s v=$defect_q}")
+                                    .add("fq", "{!join from=vin_s to=vin_s v=$claim_q}")
+                                    .add("claim_q", "doc_type_s:claim AND claim_milage_i:[* TO 10000]")
+                                    .add("defect_q", "doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
                                     .add("json.facet", json_q4_a)
                             );
                             avg.set(0, avg.get(0) + response.getQTime());
@@ -522,8 +519,8 @@ public class QuerySolr_2 {
                             QueryResponse response = client.query(new ModifiableSolrParams()
                                     .add("rows", "0")
                                     .add("q", "doc_type_s:vehicle AND v_year_i:(1995 1996 1997 1998 1999 2000 2001 2002 2003 2004)")
-                                    .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
-                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
+                                    .add("fq", "{!join from=vin_s to=vin_s v=$defect_q}")
+                                    .add("defect_q", "doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
                                     .add("json.facet", json_q4)
                             );
                             avg.set(0, avg.get(0) + response.getQTime());
@@ -551,9 +548,9 @@ public class QuerySolr_2 {
                                     .add("rows", "0")
                                     .add("claim_q", "doc_type_s:claim AND claim_opcode_s:(c_op_0072 c_op_0097 c_op_0041 c_op_0084 c_op_0026)")
                                     .add("q", "doc_type_s:vehicle AND v_year_i:(1995 1996 1997 1998 1999 2000 2001 2002 2003 2004)")
-                                    .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
-                                    .add("fq","{!join from=vin_s to=vin_s v=claim_q}")
-                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
+                                    .add("fq", "{!join from=vin_s to=vin_s v=$defect_q}")
+                                    .add("fq", "{!join from=vin_s to=vin_s v=claim_q}")
+                                    .add("defect_q", "doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
                                     .add("json.facet", json_q4)
                             );
                             avg.set(0, avg.get(0) + response.getQTime());
@@ -581,9 +578,9 @@ public class QuerySolr_2 {
                                     .add("claim_q", "doc_type_s:claim AND claim_opcode_s:c_op_0072")
                                     .add("rows", "0")
                                     .add("q", "doc_type_s:vehicle AND v_year_i:(1995 1996 1997 1998 1999 2000 2001 2002 2003 2004)")
-                                    .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
-                                    .add("fq","{!join from=vin_s to=vin_s v=claim_q}")
-                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:d_shop_01")
+                                    .add("fq", "{!join from=vin_s to=vin_s v=$defect_q}")
+                                    .add("fq", "{!join from=vin_s to=vin_s v=claim_q}")
+                                    .add("defect_q", "doc_type_s:defect AND defect_shop_s:d_shop_01")
                                     .add("json.facet", json_q4)
                             );
                             avg.set(0, avg.get(0) + response.getQTime());
@@ -612,9 +609,9 @@ public class QuerySolr_2 {
                                     .add("claim_q", "doc_type_s:claim AND claim_opcode_s:c_op_0072")
                                     .add("rows", "0")
                                     .add("q", "doc_type_s:vehicle AND v_year_i:1995")
-                                    .add("fq","{!join from=vin_s to=vin_s v=$defect_q}")
-                                    .add("fq","{!join from=vin_s to=vin_s v=claim_q}")
-                                    .add("defect_q","doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
+                                    .add("fq", "{!join from=vin_s to=vin_s v=$defect_q}")
+                                    .add("fq", "{!join from=vin_s to=vin_s v=claim_q}")
+                                    .add("defect_q", "doc_type_s:defect AND defect_shop_s:(d_shop_01 d_shop_06 d_shop_07 d_shop_09)")
                                     .add("json.facet", json_q4)
                             );
                             avg.set(0, avg.get(0) + response.getQTime());
