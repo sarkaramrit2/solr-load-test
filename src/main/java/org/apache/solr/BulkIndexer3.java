@@ -27,7 +27,6 @@ public class BulkIndexer3 {
     public static void main(String args[]) throws Exception {
 
         final String zkHost = "localhost:9983";
-        //final String zkHost = "apple:9983";
         final CloudSolrClient client = new CloudSolrClient(zkHost);
         final String collection = "test";
         client.setDefaultCollection(collection);
