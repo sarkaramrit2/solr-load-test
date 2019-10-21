@@ -24,7 +24,7 @@ public class TestJSONFacetAPI {
 
     public void index() throws IOException, SolrServerException {
         Random r = new Random();
-        CloudSolrClient client = new CloudSolrClient("localhost:9983");
+        CloudSolrClient client = new CloudSolrClient.Builder().withZkHost("localhost:9983").build();
         client.deleteByQuery("gettingstarted", "*:*");
 
         List<SolrInputDocument> docs = new ArrayList<>(10000);
@@ -54,7 +54,7 @@ public class TestJSONFacetAPI {
     }
 
     public void testLotsOfDeleteByQueries() throws IOException, SolrServerException, InterruptedException {
-        CloudSolrClient client = new CloudSolrClient("localhost:9983");
+        CloudSolrClient client = new CloudSolrClient.Builder().withZkHost("localhost:9983").build();
         //assume we have 10M documents with id's starting from 0 sequentially
 
         //delete 50k docs . 1 batch has 500 deletes
@@ -81,7 +81,7 @@ public class TestJSONFacetAPI {
 
 
     public void testLotsOfDeleteByID() throws IOException, SolrServerException, InterruptedException {
-        CloudSolrClient client = new CloudSolrClient("localhost:9983");
+        CloudSolrClient client = new CloudSolrClient.Builder().withZkHost("localhost:9983").build();
         //assume we have 10M documents with id's starting from 0 sequentially
 
         //delete 50k docs . 1 batch has 500 deletes

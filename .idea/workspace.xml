@@ -2,76 +2,74 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a83e0936-c639-4b09-b1b9-98f31ca6a922" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_carrotsearch_randomizedtesting_randomizedtesting_runner_2_5_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math3_3_4_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_4_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_codecs_6_6_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_core_6_6_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_lucene_lucene_test_framework_6_6_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_solr_solr_solrj_6_6_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_noggit_noggit_0_6.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/solr-load-test-1.0-SNAPSHOT-jar-with-dependencies.jar" afterPath="$PROJECT_DIR$/target/solr-load-test-1.0-SNAPSHOT-jar-with-dependencies.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/solr-load-test-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/solr-load-test-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solr-load-test.iml" afterPath="$PROJECT_DIR$/solr-load-test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/FacetingPerf.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/FacetingPerf.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/MultipleFieldsTest.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/MultipleFieldsTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/TestJSONFacetAPI.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/TestJSONFacetAPI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/index.jmx" afterPath="$PROJECT_DIR$/target/classes/index.jmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/query.jmx" afterPath="$PROJECT_DIR$/target/classes/query.jmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/CreateIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/UniqueWords.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer$IndexThread.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer2$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer3$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/BulkIndexer3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/CreateIndex.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/DBQ_Reordering$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/DBQ_Reordering$IndexThread.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/DBQ_Reordering.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/FacetingPerf.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/MultipleFieldsTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_2$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_2$10.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_2$11.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_2$12.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_2$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_2$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_2$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_2$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_2$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_2$7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_2$8.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_2$9.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/QuerySolr_3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/RollupTest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/RollupTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/Stream2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/StreamExpressionExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/TestJSONFacetAPI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/UltimateCdcrTester.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/apache/solr/UniqueWords.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RowsStream.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SUM.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/solr-load-test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/solr-load-test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/AroopStream.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/DBQ_Reordering.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/DBQ_Reordering.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/RollupTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/RollupTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/apache/solr/TestJSONFacetAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/apache/solr/TestJSONFacetAPI.java" afterDir="false" />
     </list>
-    <ignored path="solr-load-test.iws" />
-    <ignored path=".idea/workspace.xml" />
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="solr-load-test" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BulkIndexer3.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer3.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BulkIndexer2.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="30" column="96" lean-forward="false" selection-start-line="30" selection-start-column="96" selection-end-line="30" selection-end-column="96" />
-              <folding>
-                <element signature="e#1584#3731#0" expanded="true" />
-                <element signature="e#3730#3731#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -80,109 +78,8 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>mext</find>
-      <find>dvhash</find>
-      <find>core.properties</find>
-      <find>level1</find>
-      <find>top_facet_s</find>
-      <find>1.</find>
-      <find>PROP_MAX_CONNECTIONS_PER_HOST</find>
-      <find>Bulk</find>
-      <find>args[5]</find>
-      <find>HTML_CHAR_ENTITIES</find>
-      <find>possible analysis error</find>
-      <find>_txt_en</find>
-      <find>Sorry, no dataimport-handler defined</find>
-      <find>geodist</find>
-      <find>setBasicAuthHeader</find>
-      <find>query</find>
-      <find>query(</find>
-      <find>basic</find>
-      <find>toExpre</find>
-      <find>ToExpre</find>
-      <find>implements StreamOperation</find>
-      <find>ToEx</find>
-      <find>toEx</find>
-      <find>add</find>
-      <find>select</find>
-      <find>concat</find>
-      <find>QTime</find>
-      <find>checke</find>
-      <find>commit</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>_s</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/lucidworks/OvidQuerySampler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lucidworks/QuerySampler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lucidworks/FusionQuerySampler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lucidworks/StandaloneSolrQuerySampler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/Index.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/index.jmx" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wk/XMLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wk/XMLLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wk/OvidIndexer.java" />
-        <option value="/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home/src.zip!/javax/xml/stream/XMLInputFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wk/indexer/TestIndexer.java" />
-        <option value="/Library/Java/JavaVirtualMachines/jdk1.7.0_55.jdk/Contents/Home/src.zip!/java/nio/file/spi/FileSystemProvider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lucidworks/Ticket5242.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lucidworks/Delete.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/Delete.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndex.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/query.jmx" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wk/indexer/XMLLoader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wk/indexer/IndexRunner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wk/indexer/OvidIndexer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lucidworks/Ticket5517.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lucidworks/Ticket7215.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lucidworks/Ticket7502.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wk/OvidIDSampler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wk/OvidQuerySampler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/wk/SimpleSearchHistorySampler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/IndexWikipedia1K.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lucidworks/IDQuerySampler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lucidworks/SimpleQuerySampler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lucidworks/AmericanExpress.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/FacetingPerf.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/MultipleFieldsTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/TestJSONFacetAPI.java" />
-        <option value="$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0.jar!/org/apache/solr/client/solrj/impl/CloudSolrClient.class" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/DBQ_Reordering.java" />
-        <option value="$USER_HOME$/Downloads/SubmodelRepo.scala" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/StreamExpression.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/AroopStream.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/StreamExampleTest2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/Stream2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/StreamExpressionExample.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/RollupTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr_2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/QuerySolr.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/UltimateCdcrTester.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer3.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java" />
-      </list>
-    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -191,114 +88,23 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="709" />
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
+  <component name="ProjectId" id="1SK6UBUolCYvzDofBTPPChwN45C" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="solr-load-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="solr-load-test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="solr-load-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="solr-load-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="solr-load-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="solr-load-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="solr-load-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="solr-load-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="solr-load-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="solr-load-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="solr-load-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="solr-load-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lucidworks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="solr-load-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="solr-load-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="wk" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="solr-load-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="solr-load-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="wk" type="462c0819:PsiDirectoryNode" />
-              <item name="indexer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="solr-load-test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="solr-load-test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="solr" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="TupleStream&#9;FILE&#9;jar:///Users/apple/.m2/repository/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/io/stream/TupleStream.java&#10;Authe&#9;FILE&#9;jar:///Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home/lib/src.zip!/jdk.incubator.httpclient/jdk/incubator/http/AuthenticationFilter.java&#10;AuthenticationFil&#9;PSI&#9;JAVA://jdk.incubator.http.AuthenticationFilter&#10;pom&#9;FILE&#9;file:///Users/apple/git_space/solr-load-test/pom.xml&#10;SolrRe&#9;FILE&#9;jar:///Users/apple/.m2/repository/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/SolrRequest.java&#10;FastInputStream&#9;PSI&#9;JAVA://org.apache.solr.common.util.FastInputStream&#10;JavabinTupleStreamParser&#9;PSI&#9;JAVA://org.apache.solr.client.solrj.io.stream.JavabinTupleStreamParser&#10;ConcatOp&#9;PSI&#9;JAVA://org.apache.solr.client.solrj.io.ops.ConcatOperation&#10;Operation&#9;PSI&#9;JAVA://com.sun.management.internal.DiagnosticCommandImpl.OperationInfoComparator&#10;ReplaceOperation&#9;PSI&#9;JAVA://org.apache.solr.client.solrj.io.ops.ReplaceOperation&#10;ReplaceOpe&#9;PSI&#9;JAVA://org.apache.solr.client.solrj.io.ops.ReplaceWithFieldOperation&#10;Sele&#9;FILE&#9;jar:///Users/apple/.m2/repository/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/io/stream/SelectStream.java&#10;SelectS&#9;FILE&#9;jar:///Users/apple/.m2/repository/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/io/stream/SelectStream.java&#10;StreamHand&#9;PSI&#9;JAVA://java.util.logging.StreamHandler&#10;Selec&#9;FILE&#9;jar:///Users/apple/.m2/repository/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/io/stream/SelectStream.java&#10;SelectStr&#9;PSI&#9;JAVA://org.apache.solr.client.solrj.io.stream.SelectStream&#10;Que&#9;PSI&#9;JAVA://org.apache.solr.QuerySolr&#10;Query&#9;RUN_CONFIGURATION&#9;QuerySolr&#10;quer&#9;PSI&#9;JAVA://org.apache.solr.QuerySolr_2&#10;Quer&#9;RUN_CONFIGURATION&#9;QuerySolr_2&#10;b&#9;FILE&#9;file:///Users/apple/git_space/solr-load-test/src/main/java/org/apache/solr/DBQ_Reordering.java&#10;bulk&#9;FILE&#9;file:///Users/apple/git_space/solr-load-test/src/main/java/org/apache/solr/BulkIndexer2.java&#10;bulkd&#9;PSI&#9;JAVA://org.apache.lucene.search.BooleanScorer.BulkScorerAndDoc&#10;BulkInde&#9;FILE&#9;file:///Users/apple/git_space/solr-load-test/src/main/java/org/apache/solr/BulkIndexer.java" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.14941406" />
     <property name="project.structure.side.proportion" value="0.67967856" />
     <property name="recentsLimit" value="5" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="TupleStream&#9;FILE&#9;jar:///Users/apple/.m2/repository/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/io/stream/TupleStream.java&#10;Authe&#9;FILE&#9;jar:///Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home/lib/src.zip!/jdk.incubator.httpclient/jdk/incubator/http/AuthenticationFilter.java&#10;AuthenticationFil&#9;PSI&#9;JAVA://jdk.incubator.http.AuthenticationFilter&#10;pom&#9;FILE&#9;file:///Users/apple/git_space/solr-load-test/pom.xml&#10;SolrRe&#9;FILE&#9;jar:///Users/apple/.m2/repository/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/SolrRequest.java&#10;FastInputStream&#9;PSI&#9;JAVA://org.apache.solr.common.util.FastInputStream&#10;JavabinTupleStreamParser&#9;PSI&#9;JAVA://org.apache.solr.client.solrj.io.stream.JavabinTupleStreamParser&#10;ConcatOp&#9;PSI&#9;JAVA://org.apache.solr.client.solrj.io.ops.ConcatOperation&#10;Operation&#9;PSI&#9;JAVA://com.sun.management.internal.DiagnosticCommandImpl.OperationInfoComparator&#10;ReplaceOperation&#9;PSI&#9;JAVA://org.apache.solr.client.solrj.io.ops.ReplaceOperation&#10;ReplaceOpe&#9;PSI&#9;JAVA://org.apache.solr.client.solrj.io.ops.ReplaceWithFieldOperation&#10;Sele&#9;FILE&#9;jar:///Users/apple/.m2/repository/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/io/stream/SelectStream.java&#10;SelectS&#9;FILE&#9;jar:///Users/apple/.m2/repository/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/io/stream/SelectStream.java&#10;StreamHand&#9;PSI&#9;JAVA://java.util.logging.StreamHandler&#10;Selec&#9;FILE&#9;jar:///Users/apple/.m2/repository/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/io/stream/SelectStream.java&#10;SelectStr&#9;PSI&#9;JAVA://org.apache.solr.client.solrj.io.stream.SelectStream&#10;Que&#9;PSI&#9;JAVA://org.apache.solr.QuerySolr&#10;Query&#9;RUN_CONFIGURATION&#9;QuerySolr&#10;quer&#9;PSI&#9;JAVA://org.apache.solr.QuerySolr_2&#10;Quer&#9;RUN_CONFIGURATION&#9;QuerySolr_2&#10;b&#9;FILE&#9;file:///Users/apple/git_space/solr-load-test/src/main/java/org/apache/solr/DBQ_Reordering.java&#10;bulk&#9;FILE&#9;file:///Users/apple/git_space/solr-load-test/src/main/java/org/apache/solr/BulkIndexer2.java&#10;bulkd&#9;PSI&#9;JAVA://org.apache.lucene.search.BooleanScorer.BulkScorerAndDoc&#10;BulkInde&#9;FILE&#9;file:///Users/apple/git_space/solr-load-test/src/main/java/org/apache/solr/BulkIndexer.java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -323,237 +129,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BulkIndexer2">
-    <configuration name="BulkIndexer2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.apache.solr.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="org.apache.solr.BulkIndexer2" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="solr-load-test" />
-      <envs />
-    </configuration>
-    <configuration name="BulkIndexer3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.apache.solr.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="org.apache.solr.BulkIndexer3" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="solr-load-test" />
-      <envs />
-    </configuration>
-    <configuration name="QuerySolr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.apache.solr.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="org.apache.solr.QuerySolr" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="solr-load-test" />
-      <envs />
-    </configuration>
-    <configuration name="QuerySolr_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.apache.solr.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="org.apache.solr.QuerySolr_2" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="car 5 0 0 0 0 0 0" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="solr-load-test" />
-      <envs />
-    </configuration>
-    <configuration name="RollupTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="org.apache.solr.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="org.apache.solr.RollupTest" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="solr-load-test" />
-      <envs />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
-        <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
-        <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.UniqueWords">
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="INTERPRETER_PATH" value="/bin/bash" />
@@ -562,68 +138,6 @@
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SCRATCH_FILE_ID" value="0" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="solr-load-test" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
       <envs />
       <method />
     </configuration>
@@ -643,44 +157,6 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <setting name="useSbt" value="false" />
-      <setting name="useUiWithSbt" value="false" />
-      <classRegexps />
-      <testRegexps />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <setting name="useSbt" value="false" />
-      <setting name="useUiWithSbt" value="false" />
-      <classRegexps />
-      <testRegexps />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
@@ -729,49 +205,163 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <setting name="useSbt" value="false" />
-      <setting name="useUiWithSbt" value="false" />
-      <classRegexps />
-      <testRegexps />
-      <envs />
-      <method />
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.BulkIndexer2" />
-      <item index="1" class="java.lang.String" itemvalue="Application.RollupTest" />
-      <item index="2" class="java.lang.String" itemvalue="Application.QuerySolr" />
-      <item index="3" class="java.lang.String" itemvalue="Application.QuerySolr_2" />
-      <item index="4" class="java.lang.String" itemvalue="Application.BulkIndexer3" />
+    <configuration name="BulkIndexer2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.apache.solr.BulkIndexer2" />
+      <module name="solr-load-test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.apache.solr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateIndex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.apache.solr.CreateIndex" />
+      <module name="solr-load-test" />
+      <option name="PROGRAM_PARAMETERS" value="100000000" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.apache.solr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuerySolr_3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.apache.solr.QuerySolr_3" />
+      <module name="solr-load-test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.apache.solr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RollupTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.apache.solr.RollupTest" />
+      <module name="solr-load-test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.apache.solr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UniqueWords" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.apache.solr.UniqueWords" />
+      <module name="solr-load-test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.apache.solr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.BulkIndexer2" />
+      <item itemvalue="Application.QuerySolr_3" />
+      <item itemvalue="Application.RollupTest" />
+      <item itemvalue="Application.CreateIndex" />
+      <item itemvalue="Application.UniqueWords" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.BulkIndexer2" />
-        <item index="1" class="java.lang.String" itemvalue="Application.BulkIndexer3" />
-        <item index="2" class="java.lang.String" itemvalue="Application.QuerySolr_2" />
-        <item index="3" class="java.lang.String" itemvalue="Application.QuerySolr" />
-        <item index="4" class="java.lang.String" itemvalue="Application.RollupTest" />
+      <list>
+        <item itemvalue="Application.UniqueWords" />
+        <item itemvalue="Application.CreateIndex" />
+        <item itemvalue="Application.RollupTest" />
+        <item itemvalue="Application.QuerySolr_3" />
+        <item itemvalue="Application.BulkIndexer2" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SbtLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
-  </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -783,90 +373,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1484911276906</updated>
+      <workItem from="1571299955753" duration="740000" />
+      <workItem from="1571637660764" duration="5473000" />
+      <workItem from="1571650827191" duration="4124000" />
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="709" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3877551" sideWeight="0.5265625" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32656515" sideWeight="0.4734375" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27786753" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40101522" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299712" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4433164" sideWeight="0.48125" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3233909" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug Logs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299712" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3877551" sideWeight="0.5265625" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Execute Anonymous" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40188384" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Salesforce" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44740972" sideWeight="0.48125" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3877551" sideWeight="0.4734375" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.025" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3233909" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -876,282 +403,92 @@
       <collection />
     </option>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/wk/indexer/IndexRunner.java</url>
           <line>42</line>
-          <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/wk/indexer/IndexRunner.java</url>
           <line>58</line>
-          <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/lucidworks/Ticket7502.java</url>
           <line>29</line>
-          <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/lucidworks/AmericanExpress.java</url>
           <line>30</line>
-          <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer1.java</url>
-          <line>95</line>
-          <properties />
+          <line>98</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/common/params/SolrParams.java</url>
           <line>428</line>
-          <properties />
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/io/stream/SelectStream.java</url>
           <line>82</line>
-          <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/io/stream/SelectStream.java</url>
           <line>76</line>
-          <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/io/ops/ConcatOperation.java</url>
           <line>52</line>
-          <properties />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/client/solrj/io/stream/JavabinTupleStreamParser.java</url>
           <line>169</line>
-          <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/common/util/JavaBinCodec.java</url>
           <line>315</line>
-          <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0-sources.jar!/org/apache/solr/common/util/JavaBinCodec.java</url>
           <line>603</line>
-          <properties />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/apache/solr/Test.java</url>
           <line>36</line>
-          <properties />
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java</url>
-          <line>73</line>
-          <properties />
+          <line>72</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/apache/solr/CreateIndex.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-defaults>
         <breakpoint suspend="THREAD" type="java-line" />
       </breakpoints-defaults>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <option name="time" value="35" />
     </breakpoint-manager>
-    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="55" column="58" lean-forward="false" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="58" />
-          <folding>
-            <element signature="e#1584#3731#0" expanded="true" />
-            <element signature="e#3730#3731#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="e#1584#3731#0" expanded="true" />
-            <element signature="e#3730#3731#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="25" />
-          <folding>
-            <element signature="e#1584#3731#0" expanded="true" />
-            <element signature="e#3730#3731#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/solr/solr-solrj/6.6.0/solr-solrj-6.6.0.jar!/org/apache/solr/client/solrj/impl/CloudSolrClient.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17550">
-          <caret line="1283" column="24" lean-forward="false" selection-start-line="1283" selection-start-column="24" selection-end-line="1283" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/solr/BulkIndexer2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="30" column="96" lean-forward="false" selection-start-line="30" selection-start-column="96" selection-end-line="30" selection-end-column="96" />
-          <folding>
-            <element signature="e#1584#3731#0" expanded="true" />
-            <element signature="e#3730#3731#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>solr-load-test</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.67967856" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.7</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Maven: avalon-framework:avalon-framework-api:4.3</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.67967856" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

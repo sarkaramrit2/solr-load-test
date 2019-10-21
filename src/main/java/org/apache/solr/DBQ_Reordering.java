@@ -30,7 +30,7 @@ public class DBQ_Reordering {
     private final String collection;
 
     public DBQ_Reordering(String zkHost, String collection) {
-        client = new CloudSolrClient(zkHost);
+        client = new CloudSolrClient.Builder().withZkHost(zkHost).build();
         this.collection = collection;
         client.setDefaultCollection(collection);
         //httpSolrClient = new HttpSolrClient("http://127.0.0.1:8983/solr/");

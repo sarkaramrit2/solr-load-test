@@ -29,7 +29,7 @@ public class QuerySolr_2 {
         params.set(HttpClientUtil.PROP_MAX_CONNECTIONS_PER_HOST, 1024);
         params.set(HttpClientUtil.PROP_FOLLOW_REDIRECTS, false);
         httpClient = HttpClientUtil.createClient(params);
-        final CloudSolrClient client = new CloudSolrClient(zkHost, httpClient);
+        final CloudSolrClient client = new CloudSolrClient.Builder().build();
         System.out.println(client.getHttpClient().getParams());
         client.setDefaultCollection(collection);
 

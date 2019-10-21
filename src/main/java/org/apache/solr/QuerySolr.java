@@ -28,7 +28,7 @@ public class QuerySolr {
 
     public static void main(String args[]) throws IOException, SolrServerException, InterruptedException {
 
-        HttpSolrClient httpSolrClient = new HttpSolrClient("http://solr.enetdefender.com/solr/catalog.catalog02");
+        HttpSolrClient httpSolrClient = new HttpSolrClient.Builder().withBaseSolrUrl("http://solr.enetdefender.com/solr/catalog.catalog02").build();
 
         new CloudSolrClient.Builder().withZkHost("").build();
 

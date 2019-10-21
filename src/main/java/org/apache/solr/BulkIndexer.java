@@ -27,7 +27,7 @@ public class BulkIndexer {
     private final String collection;
 
     public BulkIndexer(String zkHost, String collection) {
-        client = new CloudSolrClient(zkHost);
+        client = new CloudSolrClient.Builder().withZkHost(zkHost).build();
         this.collection = collection;
     }
 

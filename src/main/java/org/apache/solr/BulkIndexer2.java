@@ -41,35 +41,35 @@ public class BulkIndexer2 {
 
         final UpdateRequest updateRequest = new UpdateRequest();
 
-        for (int k = 0; k < 1; k++) {
+        for (int k = 0; k < 5; k++) {
             int index = ThreadLocalRandom.current().nextInt(5);
             Thread t = new Thread() {
                 @Override
                 public void run() {
-                    for (int j = 0; j < 1000; j++) {
+                    for (int j = 0; j < 10000; j++) {
                     //while (true) {
                         List<SolrInputDocument> docs = new ArrayList<>();
-                        for (int i = 0; i < 2000; i++) {
+                        for (int i = 0; i < 4000; i++) {
                             SolrInputDocument document = new SolrInputDocument();
                             document.addField("id", UUID.randomUUID().toString());
                             document.addField("member_id_i", new Random().nextInt(3) % 3);
-                            //document.addField("subtotal_i", 1000 + new Random().nextInt(3) % 3);
-                            //document.addField("quantity_l", Math.abs(new Random().nextLong() % 3));
+                            for (int z=0; z<10; z++) {
+                                document.addField("subtotal"+z+"_i", 1000 + new Random().nextInt(3) % 3);
+                            }
+                            document.addField("quantity_l", Math.abs(new Random().nextLong() % 3));
                             document.addField("order_no_t", Strings[new Random().nextInt(3) % 3]);
-                            //document.addField("ship_addr1_s", Strings[new Random().nextInt(3) % 3]);
-                            //document.addField("ship_addr2_s", Strings[new Random().nextInt(3) % 3]);
-                            //document.addField("ship_addr3_s", Strings[new Random().nextInt(3) % 3]);
-                            //document.addField("ship_addr4_s", Strings[new Random().nextInt(3) % 3]);
-                            //document.addField("ship_addr5_s", Strings[new Random().nextInt(3) % 3]);
+                            document.addField("ship_addr1_s", Strings[new Random().nextInt(3) % 3]);
+                            document.addField("ship_addr2_s", Strings[new Random().nextInt(3) % 3]);
+                            document.addField("ship_addr3_s", Strings[new Random().nextInt(3) % 3]);
+                            document.addField("ship_addr4_s", Strings[new Random().nextInt(3) % 3]);
+                            document.addField("ship_addr5_s", Strings[new Random().nextInt(3) % 3]);
                             docs.add(document);
                         }
                         UpdateRequest updateRequest = new UpdateRequest();
                         updateRequest.add(docs);
                         try {
                             System.out.println("updateRequest: " + updateRequest);
-                            //updateRequest.process(client);
                             NamedList resp = client.request(updateRequest, collection);
-                            //
                             log.info("stop here");
                             updateRequest.commit(client, collection);
                         } catch (Exception e) {

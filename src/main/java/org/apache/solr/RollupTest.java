@@ -32,11 +32,11 @@ public class RollupTest {
             }
         };
 
-        String expr = "rollup(search(collection1,q=\"*:*\",sort=\"member_id_i desc\",fl=\"id,member_id_i,quantity_i\", qt=\"/export\"),over=\"member_id_i\",sum(quantity_i))";
+        String expr = "search(default,q=\"*:*\",sort=\"member_id_i desc\",fl=\"id,member_id_i,quantity_i\", qt=\"/export\")";
         ModifiableSolrParams paramsLoc = new ModifiableSolrParams();
         paramsLoc.set("expr", expr);
         paramsLoc.set("qt", "/stream");
-        String url = "http://aroop-1:8983/solr/collection1/";
+        String url = "http://localhost:8983/solr/default/";
         TupleStream solrStream = new SolrStream(url, paramsLoc);
 
         solrStream.setStreamContext(context);

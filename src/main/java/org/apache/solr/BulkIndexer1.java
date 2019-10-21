@@ -1,3 +1,4 @@
+/*
 package org.apache.solr;
 
 
@@ -68,14 +69,16 @@ public class BulkIndexer1 {
                         }
                         docs.clear();
 
-                        /*if (j%10 == 4) {
+                        */
+/*if (j%10 == 4) {
                             try{
                                 UpdateRequest updateRequest2 = new UpdateRequest();
                                 updateRequest2.commit(client, collection);
                             } catch (Exception e) {
 
                             }
-                        }*/
+                        }*//*
+
                     }
                 }
             };
@@ -101,3 +104,4 @@ public class BulkIndexer1 {
     }
 
 }
+*/
